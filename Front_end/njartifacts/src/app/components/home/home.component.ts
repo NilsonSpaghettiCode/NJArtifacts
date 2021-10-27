@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavComponent } from '../nav/nav.component';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-home',
