@@ -1,8 +1,9 @@
 .carrousel{
-    height: 400px;
-    width: 100%;
-    background: rgb(64, 8, 82);
-    padding: 0;
+  background: url(https://images.pexels.com/photos/7915357/pexels-photo-7915357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat fixed 100% 100%;
+   background-size: cover;
+    color: #fff; 
+    height: 500px; 
+    width: 100%; 
 }
 
 .container{
@@ -20,6 +21,9 @@
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
       }
 
+      body { background: #FFF; 
+        text-align: center; 
+        height: 100%; }
 
 
       form {
@@ -95,6 +99,17 @@
         -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
         -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
         box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+          }
+
+
+          #content { max-width: 28em;
+             text-align: justify; 
+             margin: 0 auto; 
+             padding: 2em; 
+            }
+
+          #content p { 
+            margin: 0 0 2em; 
           }
 
           @media only screen and (max-width: 800px) {
