@@ -1,66 +1,66 @@
 <header id="header" class="header">
-    <div class="navigation">
-      <div class="container">
-        <nav class="nav">
-          <div class="nav__hamburger">
-            <svg>
-              <use xlink:href="./images/sprite.svg#icon-menu"></use>
+  <div class="navigation">
+    <div class="container">
+      <nav class="nav">
+        <div class="nav__hamburger">
+          <svg>
+            <use xlink:href="./images/sprite.svg#icon-menu"></use>
+          </svg>
+        </div>
+
+        <div class="nav__logo">
+          <a href="/" class="scroll-link">
+            NJA Artifacts
+          </a>
+        </div>
+
+        <div class="nav__menu">
+          <div class="menu__top">
+            <span class="nav__category">NJA Artifacts</span>
+            <a href="#" class="close__toggle">
+              <svg>
+                <use xlink:href="./imagenes/sprite.svg#icon-cross"></use>
+              </svg>
+            </a>
+          </div>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a routerLink="/home" routerLinkActive="activate" class="nav__link scroll-link">Inicio</a>
+            </li>
+            <li class="nav__item">
+              <a routerLink="/home" routerLinkActive="activate" class="nav__link scroll-link">Categorias</a>
+            </li>
+            <li class="nav__item">
+              <a routerLink="/information" routerLinkActive="activate" class="nav__link scroll-link">Contacto</a>
+            </li>
+            <li class="nav__item">
+              <a routerLink="/test" routerLinkActive="activate" class="nav__link scroll-link">Test card</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__icons">
+          <a href="#" class="icon__item">
+            <svg class="icon__user">
+              <use xlink:href="./imagenes/sprite.svg#icon-user"></use>
             </svg>
-          </div>
+          </a>
 
-          <div class="nav__logo">
-            <a href="/" class="scroll-link">
-              NJA Artifacts
-            </a>
-          </div>
+          <a href="#" class="icon__item">
+            <svg class="icon__search">
+              <use xlink:href="./imagenes/sprite.svg#icon-search"></use>
+            </svg>
+          </a>
 
-          <div class="nav__menu">
-            <div class="menu__top">
-              <span class="nav__category">NJA Artifacts</span>
-              <a href="#" class="close__toggle">
-                <svg>
-                  <use xlink:href="./imagenes/sprite.svg#icon-cross"></use>
-                </svg>
-              </a>
-            </div>
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a routerLink="/home" routerLinkActive="activate" class="nav__link scroll-link">Inicio</a>
-              </li>
-              <li class="nav__item">
-                <a routerLink="/home" routerLinkActive="activate" class="nav__link scroll-link">Categorias</a>
-              </li>
-              <li class="nav__item">
-                <a routerLink="/information" routerLinkActive="activate" class="nav__link scroll-link">Contacto</a>
-              </li>
-              <li class="nav__item">
-                <a routerLink="/test" routerLinkActive="activate" class="nav__link scroll-link">Test card</a>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="nav__icons">
-            <a href="#" class="icon__item">
-              <svg class="icon__user">
-                <use xlink:href="./imagenes/sprite.svg#icon-user"></use>
-              </svg>
-            </a>
-
-            <a href="#" class="icon__item">
-              <svg class="icon__search">
-                <use xlink:href="./imagenes/sprite.svg#icon-search"></use>
-              </svg>
-            </a>
-
-            <a href="#" class="icon__item">
-              <svg class="icon__cart">
-                <use xlink:href="./imagenes/sprite.svg#icon-shopping-basket"></use>
-              </svg>
-              <!--<span id="cart__total">0</span>-->
-            </a>
-          </div>
-        </nav>
-      </div>
+          <a href="#" class="icon__item">
+            <svg class="icon__cart">
+              <use xlink:href="./imagenes/sprite.svg#icon-shopping-basket"></use>
+            </svg>
+            <!--<span id="cart__total">0</span>-->
+          </a>
+        </div>
+      </nav>
     </div>
-
-    <router-outlet></router-outlet>
+  </div>
+  <div class="b-example-divider"></div>
+  <router-outlet></router-outlet>
