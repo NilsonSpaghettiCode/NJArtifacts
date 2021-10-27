@@ -1,26 +1,14 @@
-<ul>
-  <li>
-    <div class="card mb-3" style="max-width: 540px; margin: 10px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img [src]="image_src" class="img-fluid rounded-start" alt="...">
-        </div>
-
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{name_product}}</h5>
-            <p class="card-text">{{description}}</p>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><b>Stock: </b>{{quantity}}</li>
-              <li class="list-group-item"><b>Category: </b>{{category}}</li>
-              <li class="list-group-item"><b>Price: </b>{{price}}$</li>
-            </ul>
-
-            <a href="#" class="btn btn-outline-success">More info</a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </li>
-</ul>
+<div class="card" style="width: 18rem; margin: 15px;">
+  <img [src]="image_src" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{name_product}}</h5>
+    <p class="card-text">{{description}}</p>
+    <p class="card-text"><b>Value: </b>{{value_product}}$</p>
+    <a href="#" class="btn btn-outline-success" style="margin-right: 1px;">More info</a>
+    <a href="#" class="btn btn-outline-warning">Add card</a>
+  </div>
+  
+  <div class="card-footer">
+    <b>Stock: </b>{{quantity}}
+  </div>
+</div>

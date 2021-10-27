@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  name_product:string = "Asus ASROCK";
-  image_src:string = "../../assets/images/TRX40 Creator.png";
-  description:string = "This a fucking description";
+  @Input() name_product:string = "Asus ASROCK";
+  @Input() image_src:string = "../../assets/images/TRX40 Creator.png";
+  @Input() description:string = "This a fucking description";
   category:string = "Motherboard";
-  quantity:number = 10;
-  price:number =  12.5;
-  constructor() { }
+  @Input() quantity:number = 10;
+  @Input() value_product:number =  12.5;
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }
