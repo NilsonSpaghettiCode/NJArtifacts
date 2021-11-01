@@ -1,3 +1,4 @@
+
 <header id="header" class="header">
   <div class="navigation">
     <div class="container">
@@ -17,15 +18,16 @@
         <div class="nav__menu">
           <div class="menu__top">
             <span class="nav__category">NJA Artifacts</span>
-            <a href="#" class="close__toggle">
-              <svg>
-                <use xlink:href="./imagenes/sprite.svg#icon-cross"></use>
-              </svg>
-            </a>
           </div>
           <ul class="nav__list">
             <li class="nav__item">
               <a routerLink="/home" routerLinkActive="activate" class="nav__link scroll-link">Inicio</a>
+              <ul>
+                <li>Sub Menu 1</li>
+                <li>Sub Menu 2</li>
+                <li>Sub Menu 3</li>
+                <li>Sub Menu 4</li>
+              </ul>
             </li>
             <li class="nav__item">
               <a routerLink="/catalog" routerLinkActive="activate" class="nav__link scroll-link">Categorias</a>
@@ -37,27 +39,6 @@
               <a routerLink="/test" routerLinkActive="activate" class="nav__link scroll-link">Test card</a>
             </li>
           </ul>
-        </div>
-
-        <div class="nav__icons">
-          <a href="#" class="icon__item">
-            <svg class="icon__user">
-              <use xlink:href="./imagenes/sprite.svg#icon-user"></use>
-            </svg>
-          </a>
-
-          <a href="#" class="icon__item">
-            <svg class="icon__search">
-              <use xlink:href="./imagenes/sprite.svg#icon-search"></use>
-            </svg>
-          </a>
-
-          <a href="#" class="icon__item">
-            <svg class="icon__cart">
-              <use xlink:href="./imagenes/sprite.svg#icon-shopping-basket"></use>
-            </svg>
-            <!--<span id="cart__total">0</span>-->
-          </a>
         </div>
       </nav>
     </div>

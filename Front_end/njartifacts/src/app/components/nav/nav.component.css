@@ -267,3 +267,20 @@
   margin: 0;
   border-radius: 300px solid;
 }
+
+.hide p{
+  font-size: 22px;
+  padding: 16px;
+  color: #351ff6;
+  cursor: pointer;
+}
+
+.nav li ul {
+  display: none;
+}
+
+.nav li:hover > ul {
+  display: block;
+  width: 100%;
+}
+
