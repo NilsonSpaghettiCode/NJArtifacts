@@ -24,7 +24,8 @@ export class ProductsComponent implements OnInit {
 
   loadProducts():void
   {
-    this.lista_productos = this.productService.getProducts(0);
+    console.log(this.categoryIdFilter);
+    this.productService.getProducts(this.categoryIdFilter).subscribe(products => this.lista_productos = products);
   }
 
 }

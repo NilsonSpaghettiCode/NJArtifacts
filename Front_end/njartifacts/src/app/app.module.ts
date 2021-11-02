@@ -16,7 +16,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FeatureComponent } from './feature/feature.component';
 import { NewComponent } from './new/new.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,11 +32,12 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     CarouselComponent,
     FeatureComponent,
     NewComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

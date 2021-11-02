@@ -20,6 +20,6 @@ export class NavComponent implements OnInit {
   }
   loadCategores():void
   {
-    this.list_category = this.categoriesService.getCategories();
+    this.categoriesService.getCategories().subscribe(categories => this.list_category= categories);
   }
 }
