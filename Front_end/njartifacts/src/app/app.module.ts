@@ -15,6 +15,7 @@ import { CatalogComponent } from './components/catalog/catalog.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FeatureComponent } from './feature/feature.component';
 import { NewComponent } from './new/new.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewComponent } from './new/new.component';
     CatalogComponent,
     CarouselComponent,
     FeatureComponent,
-    NewComponent
+    NewComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
