@@ -10,6 +10,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+
 //En la constante rroutes se definen las rutas 
 //Contiene objetos de tipo Routes -> {atributos}
 //->{path:'asd', component: namecomponent}
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes ,{onSameUrlNavigation:'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

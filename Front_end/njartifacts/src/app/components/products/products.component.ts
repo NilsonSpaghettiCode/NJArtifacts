@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   name_list:string = "Productos";
   
   constructor(private productService: ProductsService) { 
+    
   }
 
   ngOnInit(): void {
