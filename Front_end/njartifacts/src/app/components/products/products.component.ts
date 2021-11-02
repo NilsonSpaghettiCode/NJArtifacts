@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/interfaces/product';
+import { ProductsService } from 'src/app/services/services_catalog/products.service';
 
 @Component({
   selector: 'app-products',
@@ -7,45 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  lista_productos =[
-    {
-     'name_product':'Placa madre',
-     'description':'Es una placa madre',
-     'quantity':5,
-     'value':10,
-     'category':'NONE',
-     'image_src': "../../assets/images/TRX40 Creator.png",
-    },{
-      'name_product':'Disco duro',
-      'description':'Esto es un disco duro',
-      'quantity':15,
-      'value':200,
-      'category':'NONE',
-      'image_src': "../../assets/images/TRX40 Creator.png",
-     },
-     {
-      'name_product':'Ram',
-      'description':'Esto es una RAM',
-      'quantity':25,
-      'value':100,
-      'category':'NONE',
-      'image_src': "../../assets/images/TRX40 Creator.png",
-     },
-     {
-      'name_product':'Procesador',
-      'description':'Esto es un',
-      'quantity':90,
-      'value':200,
-      'category':'NONE',
-      'image_src': "../../assets/images/TRX40 Creator.png",
-     }
-  ]
-  name_list:string = "productos"
-  constructor() { 
+  @Input() categoryIdFilter = 0;
+
+  lista_productos:Product[] = []
+  
+  name_list:string = "Productos";
+  
+  constructor(private productService: ProductsService) { 
   }
 
   ngOnInit(): void {
-    
+    this.loadProducts();
+  }
+
+  loadProducts():void
+  {
+    this.lista_productos = this.productService.getProducts(0);
   }
 
 }
