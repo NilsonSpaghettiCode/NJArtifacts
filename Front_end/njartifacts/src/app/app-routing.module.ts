@@ -6,6 +6,7 @@ import { InformationComponent } from './components/information/information.compo
 import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path:'information', component: InformationComponent},
   {path:'home', component: HomeComponent},
+  {path:'shopping-card', component: ShoppingCartComponent},
   {path:'test', component: CardComponent},
   {path: 'catalog', component: CatalogComponent},
   { path: '**', component: PageNotFoundComponent }
