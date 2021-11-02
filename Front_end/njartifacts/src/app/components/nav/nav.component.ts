@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/interfaces/category';
+import { CategoryService } from 'src/app/services/services_catalog/category.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  list_category:Category[] = []
+  
+  constructor(private categoriesService:CategoryService) { }
 
   ngOnInit(): void {
-  }
 
+    this.loadCategores();
+    console.table(this.list_category)
+
+  }
+  loadCategores():void
+  {
+    this.list_category = this.categoriesService.getCategories();
+  }
 }

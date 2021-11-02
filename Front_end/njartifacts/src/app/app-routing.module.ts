@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'shopping-card', component: ShoppingCartComponent},
   {path:'test', component: CardComponent},
-  {path: 'catalog', component: CatalogComponent},
+  {path: 'catalog/:categoryId', component: CatalogComponent}, //Esta ruta necesita de un parametro como filtro
   { path: '**', component: PageNotFoundComponent }
 ];
 

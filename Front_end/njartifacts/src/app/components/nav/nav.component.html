@@ -14,9 +14,9 @@
               Categorías
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li *ngFor="let category of list_category"> <!-- Permite conseguir la lista de categorias y dirigirse al catalogo-->
+                <a class="dropdown-item" href="#" [routerLink]="['/catalog', category.id]" routerLinkActive="activate">{{category.name_category}}</a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
