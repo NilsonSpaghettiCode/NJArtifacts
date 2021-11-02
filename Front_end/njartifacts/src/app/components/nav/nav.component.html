@@ -1,46 +1,33 @@
-
-<header id="header" class="header">
-  <div class="navigation">
-    <div class="container">
-      <nav class="nav">
-        <div class="nav__hamburger">
-          <svg>
-            <use xlink:href="./images/sprite.svg#icon-menu"></use>
-          </svg>
-        </div>
-
-        <div class="nav__logo">
-          <a href="/" class="scroll-link">
-            NJA Artifacts
-          </a>
-        </div>
-
-        <div class="nav__menu">
-          <div class="menu__top">
-            <span class="nav__category">NJA Artifacts</span>
-          </div>
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a routerLink="/home" routerLinkActive="activate" class="nav__link scroll-link">Inicio</a>
-              <ul>
-                <li>Sub Menu 1</li>
-                <li>Sub Menu 2</li>
-                <li>Sub Menu 3</li>
-                <li>Sub Menu 4</li>
-              </ul>
-            </li>
-            <li class="nav__item">
-              <a routerLink="/catalog" routerLinkActive="activate" class="nav__link scroll-link">Categorias</a>
-            </li>
-            <li class="nav__item">
-              <a routerLink="/information" routerLinkActive="activate" class="nav__link scroll-link">Contacto/Información</a>
-            </li>
-            <li class="nav__item">
-              <a routerLink="/test" routerLinkActive="activate" class="nav__link scroll-link">Test card</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/" routerLinkActive="activate" >NJA Artifacts</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="activate">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorías
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/information" routerLinkActive="activate">Formas de contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Carrito de compras</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
+
   <router-outlet></router-outlet>
