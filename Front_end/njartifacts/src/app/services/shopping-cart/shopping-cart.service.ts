@@ -20,11 +20,19 @@ export class ShoppingCartService {
     return this.product_cart;
   }
 
+  clearCart(): void
+  {
+    this.product_cart = []
+  }
   
 
   getTotal(): number
   {
-    //Implementar
-    return 0;
+    let suma:number = 0;
+    this.product_cart.forEach(product_select =>{
+      suma = suma + product_select.value;
+    })
+    
+    return suma;
   }
 }

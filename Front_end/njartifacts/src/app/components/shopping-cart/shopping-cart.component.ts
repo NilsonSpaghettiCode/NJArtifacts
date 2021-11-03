@@ -10,10 +10,15 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
 export class ShoppingCartComponent implements OnInit {
 
   list_products_cart:Product[] = []
+  
+  summary:number = 0;
+  tax:number = 100;
+
   constructor(private serviceCartProduct:ShoppingCartService) { }
 
   ngOnInit(): void {
     this.loadProducts();
+    this.loadSummary();
   }
 
   loadProducts(): void
@@ -23,8 +28,18 @@ export class ShoppingCartComponent implements OnInit {
 
   clearCart(): void
   {
-    
+    this.serviceCartProduct.clearCart();
+    this.reload();
   }
 
+  loadSummary():void
+  {
+    this.summary = this.serviceCartProduct.getTotal()+this.tax;
+  }
+
+  reload():void
+  {
+    this.reload();
+  }
 }
  

@@ -19,6 +19,8 @@
             </div>
         </div>
     </div>
+    <div class="h4"><strong>Número de productos agregados:</strong> {{list_products_cart.length}}</div>
+    <button class="btn btn-dark m-1" (click)="clearCart()">Limpiar carrito <i class="bi bi-trash"></i></button>
 </div>
 <div class="container">
     <div class="row">
@@ -130,7 +132,13 @@
                             <h5 style="text-align: left;"><strong>Order total</strong></h5>
                         </div>
                         <div class="col">
-                            <h5 style="text-align: center;"><strong>$999</strong></h5>
+                            <ul style="list-style: none;">
+                                <li *ngFor="let product of list_products_cart"><h5 style="text-align: center;">
+                                    <strong>${{product.value}}</strong></h5
+                                    
+                                    ></li>
+
+                            </ul>
                         </div>
                     </div>
                     <div class="row" style="padding: 18px;border-radius: 47px;border: 1px solid rgba(33,37,41,0.04) ;">
@@ -138,7 +146,7 @@
                             <h5 style="text-align: left;"><strong>Tax</strong></h5>
                         </div>
                         <div class="col">
-                            <h5 style="text-align: center;"><strong>$10</strong></h5>
+                            <h5 style="text-align: center;"><strong>${{tax}}</strong></h5>
                         </div>
                     </div>
                     <div class="row" style="padding: 18px;border-radius: 47px;border: 1px solid rgba(33,37,41,0.04) ;">
@@ -146,7 +154,7 @@
                             <h5 style="text-align: left;"><strong>Total</strong></h5>
                         </div>
                         <div class="col">
-                            <h5 style="text-align: center;"><strong>$1009</strong></h5>
+                            <h5 style="text-align: center;"><strong>${{summary}}</strong></h5>
                         </div>
                     </div>
                     <div class="row" style="padding: 18px;border-radius: 47px;border: 1px solid rgba(33,37,41,0.04) ;">
