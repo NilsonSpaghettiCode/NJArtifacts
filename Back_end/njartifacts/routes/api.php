@@ -52,3 +52,4 @@ Route::delete('/categorias/{id}', 'App\Http\Controllers\CategoriaController@dele
 //Solicitudes Contanto
 
 Route::get('/contactos' ,[SolicitudesContactoController::class,'index']);
+Route::post('/contactos' ,[SolicitudesContactoController::class,'store']);

@@ -37,6 +37,16 @@ class SolicitudesContactoController extends Controller
     public function store(Request $request)
     {
         //
+        $solicitudes_contacto = new SolicitudesContacto();
+
+        //Estableciendo paramentros
+        $solicitudes_contacto->nombre = $request->nombre; 
+        $solicitudes_contacto->apellido = $request->apellido;
+        $solicitudes_contacto->correo_electronico = $request->correo_electronico;
+        $solicitudes_contacto->mensaje = $request->mensaje;
+
+        $solicitudes_contacto->save();
+        return $solicitudes_contacto;
     }
 
     /**
