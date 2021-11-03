@@ -14,7 +14,16 @@ class CreateProductosNuevosTable extends Migration
     public function up()
     {
         Schema::create('productos_nuevos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_productoN');
+
+            $table->string('descripcion');
+
+            $table->unsignedBigInteger('id_productofk');
+            $table->foreign('id_productofk')->references('id_producto')->on('producto');
+            
+            
+            $table->string('nombre');
+
             $table->timestamps();
         });
     }

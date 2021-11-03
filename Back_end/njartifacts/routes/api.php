@@ -17,3 +17,29 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Usuarios
+
+Route::get('/usuarios', 'App\Http\Controllers\UserController@index');
+Route::post('/usuarios', 'App\Http\Controllers\UserController@store');
+Route::put('/usuarios/{id}', 'App\Http\Controllers\UserController@update');
+Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
+
+//Productos
+Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
+Route::post('/productos', 'App\Http\Controllers\ProductoController@store');
+Route::put('/productos/{id}', 'App\Http\Controllers\ProductoController@update');
+Route::delete('/productos/{id}', 'App\Http\Controllers\ProductoController@delete');
+
+//Ordenes
+Route::get('/ordenes', 'App\Http\Controllers\OrdenController@index');
+Route::post('/ordenes', 'App\Http\Controllers\OrdenController@store');
+Route::put('/ordenes/{id}', 'App\Http\Controllers\OrdenController@update');
+Route::delete('/ordenes/{id}', 'App\Http\Controllers\OrdenController@delete');
+
+
+//Categorias
+Route::get('/categorias', 'App\Http\Controllers\CategoriaController@index');
+Route::post('/categorias', 'App\Http\Controllers\CategoriaController@store');
+Route::put('/categorias/{id}', 'App\Http\Controllers\CategoriaController@update');
+Route::delete('/categorias/{id}', 'App\Http\Controllers\CategoriaController@delete');

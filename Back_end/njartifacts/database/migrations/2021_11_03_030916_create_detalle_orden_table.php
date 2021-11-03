@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateDetalleOrdenTable extends Migration
 {
     /**
@@ -14,10 +15,14 @@ class CreateDetalleOrdenTable extends Migration
     public function up()
     {
         Schema::create('detalle_orden', function (Blueprint $table) {
-            $table->primary('id_ordenD');
+            $table->id('id_ordenD');
 
-            $table->foreignId('id_orden')->constrained('orden');
-            $table->foreignId('id_producto')->constrained('producto');
+            $table->unsignedBigInteger('id_productofk');
+            $table->unsignedBigInteger('id_ordenfk');
+
+            $table->foreign('id_productofk')->references('id_producto')->on('producto');
+            $table->foreign('id_ordenfk')->references('id_orden')->on('orden');
+            
 
             $table->string('nombre_producto');
             $table->integer('valor_orden');

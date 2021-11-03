@@ -15,8 +15,12 @@ class CreateOrdenTable extends Migration
     {
         Schema::create('orden', function (Blueprint $table) {
             
-            $table->primary('id_orden');
-            $table->foreignId('id_usuario')->constrained('users');
+            $table->id('id_orden');
+            
+            $table->unsignedBigInteger('id_userfk');
+
+            $table->foreign('id_userfk')->references('id_user')->on('users');
+
             $table->string('email_usuario');
             $table->timestamp('fecha_orden');
             

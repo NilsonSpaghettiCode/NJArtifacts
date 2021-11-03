@@ -14,10 +14,13 @@ class CreateCategoriaProductoTable extends Migration
     public function up()
     {
         Schema::create('categoria_producto', function (Blueprint $table) {
-            $table->primary('id_categoriaProducto');
+            $table->id('id_categoriaProducto');
 
-            $table->foreignId('id_producto')->constrained('producto');;
-            $table->foreignId('id_categoria')->constrained('categoria');;
+            $table->unsignedBigInteger('id_productofk');
+            $table->unsignedBigInteger('id_categoriafk');
+            $table->foreign('id_productofk')->references('id_producto')->on('producto');
+            $table->foreign('id_categoriafk')->references('id_categoria')->on('categoria');
+            
             $table->timestamps();
         });
     }

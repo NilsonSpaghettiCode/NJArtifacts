@@ -14,10 +14,14 @@ class CreateProductosDestacadosTable extends Migration
     public function up()
     {
         Schema::create('productos_destacados', function (Blueprint $table) {
-            $table->primary('id_productoD');
+            $table->id('id_productoD');
 
             $table->string('descripcion');
-            $table->foreignId('id_producto')->constrained('producto');
+
+            $table->unsignedBigInteger('id_productofk');
+            $table->foreign('id_productofk')->references('id_producto')->on('producto');
+            
+
             $table->string('nombre');
 
             $table->timestamps();
