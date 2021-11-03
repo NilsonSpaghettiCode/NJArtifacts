@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SolicitudesContactoController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,6 +28,9 @@ Route::put('/usuarios/{id}', 'App\Http\Controllers\UserController@update');
 Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
 
 //Productos
+
+//Route::get('/productos/{id}',ProductoController) Implementar el metodo get para solo un producto
+
 Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
 Route::post('/productos', 'App\Http\Controllers\ProductoController@store');
 Route::put('/productos/{id}', 'App\Http\Controllers\ProductoController@update');
@@ -43,3 +48,7 @@ Route::get('/categorias', 'App\Http\Controllers\CategoriaController@index');
 Route::post('/categorias', 'App\Http\Controllers\CategoriaController@store');
 Route::put('/categorias/{id}', 'App\Http\Controllers\CategoriaController@update');
 Route::delete('/categorias/{id}', 'App\Http\Controllers\CategoriaController@delete');
+
+//Solicitudes Contanto
+
+Route::get('/contactos' ,[SolicitudesContactoController::class,'index']);
