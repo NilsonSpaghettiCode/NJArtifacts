@@ -21,5 +21,10 @@ export class ShoppingCartComponent implements OnInit {
     this.list_products_cart = this.serviceCartProduct.getCartProducts();
   }
 
+  clearCart(): void
+  {
+    
+  }
+
 }
  
