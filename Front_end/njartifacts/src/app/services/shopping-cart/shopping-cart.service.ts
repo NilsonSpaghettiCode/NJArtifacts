@@ -12,10 +12,19 @@ export class ShoppingCartService {
   addProduct(product:Product):void
   {
     this.product_cart.push(product);
+    console.log("Producto agregado");
   }
 
   getCartProducts():Product[]
   {
     return this.product_cart;
+  }
+
+  
+
+  getTotal(): number
+  {
+    //Implementar
+    return 0;
   }
 }
