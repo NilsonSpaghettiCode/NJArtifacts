@@ -45,6 +45,7 @@ class ProductoController extends Controller
         $productos->categoria=$request->categoria;
         $productos->cantidad=$request->cantidad;
 
+        //ano-mes-dia
         $productos->fecha_Insercion=$request->fecha_Insercion;
 
         $productos->save();
@@ -60,6 +61,8 @@ class ProductoController extends Controller
     public function show($id)
     {
         //
+        $producto_encontrado = Producto::find($id->id);
+        return $producto_encontrado;
     }
 
     /**

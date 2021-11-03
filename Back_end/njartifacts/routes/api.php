@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+//Imports controller
+
+use App\Http\Controllers\ProductoController;
+
 use App\Http\Controllers\SolicitudesContactoController;
 
 /*
@@ -29,7 +33,7 @@ Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
 
 //Productos
 
-//Route::get('/productos/{id}',ProductoController) Implementar el metodo get para solo un producto
+Route::get('/productos/{id}',[ProductoController::class, 'show']); //Implementar el metodo get para solo un producto
 
 Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
 Route::post('/productos', 'App\Http\Controllers\ProductoController@store');
