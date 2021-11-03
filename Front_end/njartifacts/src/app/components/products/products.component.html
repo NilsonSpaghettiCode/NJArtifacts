@@ -9,14 +9,14 @@
             </div>
             <ng-template #thenBlock>
                 <div>
-                    <app-card  [name_product]="product.name_product"
+                    <app-card [id_product]="product.id" [name_product]="product.name_product"
                     [description]="product.description" [quantity]="product.quantity" [value_product]="product.value"
                     [image_src]="product.url_image"></app-card> 
                 </div>
             </ng-template>
             <ng-template #elseBlock>
                 <div >
-                    <app-card [name_product]="product.name_product"
+                    <app-card [id_product]="product.id" [name_product]="product.name_product"
                     [description]="product.description" [quantity]="product.quantity" [value_product]="product.value"></app-card>
                 </div>
             </ng-template>

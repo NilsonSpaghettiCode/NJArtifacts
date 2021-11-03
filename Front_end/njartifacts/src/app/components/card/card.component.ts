@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
   category:string = "Motherboard";
   @Input() quantity:number = 10;
   @Input() value_product:number =  12.5;
+  @Input() id_product:number = 0;
   constructor() {
     
    }

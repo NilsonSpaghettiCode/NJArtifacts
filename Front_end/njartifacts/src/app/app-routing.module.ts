@@ -9,6 +9,7 @@ import { CatalogComponent } from './components/catalog/catalog.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 //En la constante rroutes se definen las rutas 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'shopping-card', component: ShoppingCartComponent},
   {path:'test', component: CardComponent},
   {path: 'catalog/:categoryId', component: CatalogComponent}, //Esta ruta necesita de un parametro como filtro
+  {path:'product-detail/:productId',component:ProductDetailComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -17,6 +17,7 @@ import { FeatureComponent } from './feature/feature.component';
 import { NewComponent } from './new/new.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ImagePreviewComponent } from './components/image-preview/image-preview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
     FeatureComponent,
     NewComponent,
     ShoppingCartComponent,
+    ImagePreviewComponent,
   ],
   imports: [
     BrowserModule,
