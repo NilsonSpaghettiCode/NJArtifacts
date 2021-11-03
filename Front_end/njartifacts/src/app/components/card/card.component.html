@@ -5,7 +5,7 @@
     <p class="card-text">{{description}}</p>
     <p class="card-text"><b>Value: </b>{{value_product}}$</p>
     <a [routerLink]="['/product-detail',id_product]" class="btn btn-outline-success" style="margin-right: 1px;">More info</a>
-    <a href="#" class="btn btn-outline-warning">Add card</a>
+    <button (click)="addProduct()" class="btn btn-outline-warning" >Añadir al carrito</button>
   </div>
   
   <div class="card-footer">

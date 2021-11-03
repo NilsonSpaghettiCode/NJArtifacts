@@ -11,13 +11,14 @@
                 <div>
                     <app-card [id_product]="product.id" [name_product]="product.name_product"
                     [description]="product.description" [quantity]="product.quantity" [value_product]="product.value"
-                    [image_src]="product.url_image"></app-card> 
+                    [image_src]="product.url_image" [product]="product"></app-card> 
                 </div>
             </ng-template>
             <ng-template #elseBlock>
                 <div >
                     <app-card [id_product]="product.id" [name_product]="product.name_product"
-                    [description]="product.description" [quantity]="product.quantity" [value_product]="product.value"></app-card>
+                    [description]="product.description" [quantity]="product.quantity" [value_product]="product.value"
+                    [product]="product"></app-card>
                 </div>
             </ng-template>
             
