@@ -4,6 +4,7 @@ export interface Product {
     description: string;
     categoryId: number;
     //Agregar marca
+    
     quantity:number;
     list_features: [];
     url_image: string;

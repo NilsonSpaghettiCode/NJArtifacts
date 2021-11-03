@@ -1,7 +1,7 @@
 .carrousel{
   background: url(https://images.pexels.com/photos/7915357/pexels-photo-7915357.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat fixed 100% 100%;
    background-size: cover;
-    color: #fff; 
+    color: rgb(5, 5, 5); 
     height: 100%; 
     width: 100%; 
 }
@@ -59,7 +59,7 @@
        margin-left: 5%;
        margin-right: 5%;
        margin-top: 10px;
-       border: 1px solid #eceff1;
+       border: 1px solid rgb(255, 255, 255);
        padding: 15px;
        z-index: 1;
      position: relative;
@@ -83,14 +83,14 @@
       }
 
       [type="submit"]:hover {
-        border-color: #c6c6c6;
+        border-color: #fafafa;
         color: rgb(0, 0, 0);
         cursor: pointer;
         -o-transition: all 0.2s;
         -moz-transition: all 0.3s;
         -webkit-transition: all 0.2s;
         transition: all 0.2s;
-        background-color: #4c8ffc;
+        background-color: #4d4d4d;
         background-image: -webkit-linear-gradient(top,#4c8ffc,#4889f0);
         background-image: -moz-linear-gradient(top,#4c8ffc,#4889f0);
         background-image: -ms-linear-gradient(top,#4c8ffc,#4889f0);
@@ -145,7 +145,7 @@
       
       .container_card .card_reveal .face.face1{
           position: relative;
-          background: rgb(206, 206, 206);
+          background: rgb(255, 255, 255);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -154,7 +154,7 @@
       }
       
       .container_card .card_reveal:hover .face.face1{
-          background: #ff0057;
+          background: #4d4d4d;
           transform: translateY(0);
       }
       
@@ -174,7 +174,7 @@
       .container_card .card_reveal .face.face1 .content h3{
           margin: 10px 0 0;
           padding: 0;
-          color: #fff;
+          color: rgb(5, 5, 5);
           text-align: center;
           font-size: 1.5em;
       }
@@ -216,7 +216,7 @@
       }
 
       .contac_info{
-        background:rgb(226, 218, 218);
+        background:rgb(255, 255, 255);
       }
       
         
@@ -261,17 +261,4 @@
       
       .section:hover .overlay {
         background-color: rgba(0, 0, 0, 0.95);
-      }
-      
-      #marketing {
-        background-image: url(https://images.unsplash.com/photo-1522205987242-8e22924ab42a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c0f679eb8f15705d46ea90008f39642b&auto=format&fit=crop&w=500&q=60);
-      }
-      
-      
-      #technology {
-        background-image: url(https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe6b92f88f55824e64a1bae15f5bf52a&auto=format&fit=crop&w=500&q=60);
-      }
-      
-      #advertising {
-        background-image: url(https://images.unsplash.com/photo-1517799094725-e3453440724e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=353f3663a9fae75773d2942aeb37c2c8&auto=format&fit=crop&w=500&q=60);
       }
