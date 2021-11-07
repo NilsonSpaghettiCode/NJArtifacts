@@ -44,6 +44,7 @@ class SolicitudesContactoController extends Controller
         $solicitudes_contacto->apellido = $request->apellido;
         $solicitudes_contacto->correo_electronico = $request->correo_electronico;
         $solicitudes_contacto->mensaje = $request->mensaje;
+        $solicitudes_contacto->contactado = 0;
 
         $solicitudes_contacto->save();
         return $solicitudes_contacto;
