@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/interfaces/product';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
@@ -39,7 +40,7 @@ export class ShoppingCartComponent implements OnInit {
 
   reload():void
   {
-    this.reload();
+    window.location.reload();
   }
 }
  

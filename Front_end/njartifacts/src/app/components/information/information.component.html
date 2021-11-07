@@ -1,70 +1,95 @@
-    <div class="carrousel">
-  
-    
-        <div class="container">
-            <form class="cot" action="" method="post">
-                <h1>Contact Us!</h1>
-                <p>Say Hello! Or whatever you want!</p>
-                <div id="logo" class="icon-ic-drafts-24px"></div>
-                <input name="name" type="text"
-                placeholder="Name" id="name" required/>
-                
-                <input name="email" type="email"
-                placeholder="Email" id="email" required/>
-                
-                <textarea name="text" placeholder="Message"></textarea>            
-                <input type="submit" value="Send" id="button-blue"/>
+<div class="carrousel">
 
-            </form>
-        </div>
 
-        <section class="contac_info">
-        
-            <div id="content">
+    <div class="container text-center">
+        <form class="cot">
+
+
+            <h1>Contact Us!</h1>
+            <p>Say Hello! Or whatever you want!</p>
+            <div id="logo" class="icon-ic-drafts-24px"></div>
+            <span>
+                <p>Nombre: {{ form_nombre.value }}</p>
+            </span>
+            <input name="name" type="text" placeholder="Nombre" id="name" required [formControl]="form_nombre" />
+            <input name="name" type="text" placeholder="Apellido" id="name" required [formControl]="form_apellido" />
+
+            <input name="email" type="email" placeholder="Correo electronico" id="email" required
+                [formControl]="form_correo" />
+
+            <textarea name="text" placeholder="Mensaje" [formControl]="form_mensaje"></textarea>
+            <br>
+            <input (click)="sendContacto()" class="btn btn-success text-center" placeholder="Enviar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             
-                   <div class="container_card">
-                     <div class="card_reveal">
-                         <div class="face face1">
-                              <div class="content">
-                                   <img src="../../assets/images/1.png">
-                                     <h3>Call Us</h3>
-                                </div>
-                         </div>
-                            <div class="face face2">
-                            <div class="content">
-                                <p>You can call to the following numbers: <b>3209720384 ,</b><b>3024387385 , </b><b>3194362672</b></p>  
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="card_reveal">
-                           <div class="face face1">
-                              <div class="content">
-                                  <img src="../../assets/images/2.png">
-                                  <h3>Visit Us</h3>
-                             </div>
-                          </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                                    <a href="#">Read More</a>
-                            </div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        El registro {{response}} fue realizado
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Seguir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </form>
+    </div>
+
+    <section class="contac_info">
+        <div id="content">
+
+            <div class="container_card">
+                <div class="card_reveal">
+                    <div class="face face1">
+                        <div class="content">
+                            <img src="../../assets/images/1.png">
+                            <h3>Call Us</h3>
                         </div>
                     </div>
-                    <div class="card_reveal">
-                        <div class="face face1">
-                            <div class="content">
-                                <img src="../../assets/images/3.png">
-                                <h3>Write Us</h3>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                                    <a href="#">Read More</a>
-                            </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>You can call to the following numbers: <b>3209720384 ,</b><b>3024387385 ,
+                                </b><b>3194362672</b></p>
+                            <a href="#">Read More</a>
                         </div>
                     </div>
                 </div>
-            </div>    
-</section>
+                <div class="card_reveal">
+                    <div class="face face1">
+                        <div class="content">
+                            <img src="../../assets/images/2.png">
+                            <h3>Visit Us</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_reveal">
+                    <div class="face face1">
+                        <div class="content">
+                            <img src="../../assets/images/3.png">
+                            <h3>Write Us</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

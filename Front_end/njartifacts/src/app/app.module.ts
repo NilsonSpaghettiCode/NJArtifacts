@@ -16,9 +16,13 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FeatureComponent } from './feature/feature.component';
 import { NewComponent } from './new/new.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { HomecardComponent } from './homecard/homecard.component';
+
 import {HttpClientModule} from '@angular/common/http';
 import { ImagePreviewComponent } from './components/image-preview/image-preview.component';
-import { HomecardComponent } from './homecard/homecard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +45,8 @@ import { HomecardComponent } from './homecard/homecard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
