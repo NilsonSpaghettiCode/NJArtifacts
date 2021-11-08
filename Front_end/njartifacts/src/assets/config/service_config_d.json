@@ -1,4 +1,4 @@
 {
     "name":"",
-    "APIurl": "http://localhost/api/"
+    "APIurl": "http://localhost:8000/api/"
 }
