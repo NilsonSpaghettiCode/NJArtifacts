@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CategoryService {
   //Propiedades del servicio
-  url = 'http://localhost:3000/categories';
+  url = 'http://localhost:8000/api/categorias';
 
   constructor(private http:HttpClient) { }
 
