@@ -1,4 +1,4 @@
 {
-    "name":"api-dev",
-    "APIurl": "http://localhost:8000/api/"
+    "NAME_CONFIG":"api-dev",
+    "URL_API": "http://localhost:8000/api/"
 }

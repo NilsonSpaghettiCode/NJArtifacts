@@ -1,4 +1,4 @@
-export interface ConfigREST {
-    name:string;
-    APIurl:string;
+export class ConfigAPI{
+    NAME_CONFIG:string = "";
+    URL_API:string = "";
 }
