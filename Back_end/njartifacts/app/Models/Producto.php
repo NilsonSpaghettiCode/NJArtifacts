@@ -10,6 +10,7 @@ class Producto extends Model
     use HasFactory;
     //use HasMany;
     protected $table = "producto";
+    protected $primaryKey = "id_producto";
 
     public function caracteristicas()
     {
