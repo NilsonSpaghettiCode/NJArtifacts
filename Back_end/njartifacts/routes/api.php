@@ -67,6 +67,6 @@ Route::get('/contactos/{id}' ,[SolicitudesContactoController::class,'index']);
 
 Route::get('/caracteristica', [CaracteristicaController::class, 'index']);
 Route::post('/caracteristica', [CaracteristicaController::class, 'store']);
-Route::put('/caracteristica/{id}', [CaracteristicaController::class, '']);
-Route::delete('/caracteristica/{id}', [CaracteristicaController::class, '']);
+Route::put('/caracteristica', [CaracteristicaController::class, 'update']);
+Route::delete('/caracteristica/{id}', [CaracteristicaController::class, 'destroy']);
 Route::get('/caracteristica/{id}', [CaracteristicaController::class, 'index']);

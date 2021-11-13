@@ -82,6 +82,11 @@ class CaracteristicaController extends Controller
     public function update(Request $request, Caracteristica $caracteristica)
     {
         //
+        $caracteristica = Caracteristica::find($request->id);
+        $caracteristica->nombre = $request->nombre;
+        $caracteristica->descripcion = $request->descripcion;
+        $caracteristica->save();
+        return $caracteristica;
     }
 
     /**
@@ -90,8 +95,10 @@ class CaracteristicaController extends Controller
      * @param  \App\Models\Caracteristica  $caracteristica
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Caracteristica $caracteristica)
+    public function destroy($id)
     {
         //
+        $caracteristica = Caracteristica::destroy($id);
+        return $caracteristica;
     }
 }
