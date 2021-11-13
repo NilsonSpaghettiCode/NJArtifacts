@@ -37,7 +37,9 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         // $variable_registros->campo=$request->campo
+        
         $productos = new Producto();
+        
         $productos->valor=$request->valor;
         $productos->nombre=$request->nombre;
         $productos->descripcion=$request->descripcion;
@@ -48,8 +50,9 @@ class ProductoController extends Controller
         //ano-mes-dia
         $productos->fecha_Insercion=$request->fecha_Insercion;
 
-        $productos->save();
 
+        $productos->save();
+        return $productos;
     }
 
     /**
@@ -62,6 +65,7 @@ class ProductoController extends Controller
     {
         //
         $producto_encontrado = Producto::find($id->id);
+        echo $producto_encontrado->caracteristicas();
         return $producto_encontrado;
     }
 
