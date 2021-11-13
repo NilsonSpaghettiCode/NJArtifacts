@@ -43,6 +43,7 @@ class CategoriaController extends Controller
 
         $categorias->save();
 
+        return $categorias;
 
     }
 
