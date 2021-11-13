@@ -15,6 +15,9 @@ class CaracteristicaController extends Controller
     public function index()
     {
         //
+        $caracteristicas = Caracteristica::all();
+
+        return $caracteristicas;
     }
 
     /**
@@ -35,7 +38,16 @@ class CaracteristicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //caracteristica
+
+        $caracteristica = new Caracteristica();
+        
+        $caracteristica->nombre = $request->nombre; 
+        $caracteristica->descripcion = $request->descripcion;
+
+        $caracteristica->save();
+
+        return $caracteristica;
     }
 
     /**

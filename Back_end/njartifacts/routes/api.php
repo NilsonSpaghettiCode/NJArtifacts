@@ -9,6 +9,8 @@ use App\Http\Controllers\ProductoController;
 
 use App\Http\Controllers\SolicitudesContactoController;
 
+use App\Http\Controllers\CaracteristicaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,7 +37,7 @@ Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
 
 Route::get('/productos/{id}',[ProductoController::class, 'show']); //Implementar el metodo get para solo un producto
 
-Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
+//Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
 Route::post('/productos', 'App\Http\Controllers\ProductoController@store');
 Route::put('/productos/{id}', 'App\Http\Controllers\ProductoController@update');
 Route::delete('/productos/{id}', 'App\Http\Controllers\ProductoController@delete');
@@ -57,3 +59,10 @@ Route::delete('/categorias/{id}', 'App\Http\Controllers\CategoriaController@dele
 
 Route::get('/contactos' ,[SolicitudesContactoController::class,'index']);
 Route::post('/contactos' ,[SolicitudesContactoController::class,'store']);
+
+//Caracteristicas
+
+Route::get('/caracteristica', [CaracteristicaController::class, 'index']);
+Route::post('/caracteristica', [CaracteristicaController::class, 'store']);
+//Route:put('/caracteristicas', []);
+//Route:delete('/caracteristicas', []);

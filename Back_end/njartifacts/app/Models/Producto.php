@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
+    //use HasMany;
     protected $table = "producto";
+
+    public function caracteristicas()
+    {
+        return $this->belongsToMany(Caracteristica::class);
+    }
 }
