@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,10 +18,20 @@ import { NewComponent } from './new/new.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { HomecardComponent } from './homecard/homecard.component';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ImagePreviewComponent } from './components/image-preview/image-preview.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConfigService } from './services/config.service';
+import { ConfigAPI } from './interfaces/config-rest';
 
+export function inicializador(configAPI:ConfigService)
+{
+  return ()=>
+  {
+    return configAPI.loadConfigREST();
+  };
+
+}
 
 @NgModule({
   declarations: [
@@ -48,7 +58,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ConfigAPI,
+      deps:[HttpClient],
+      useExisting: ConfigService
+    },
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      deps:[ConfigService],
+      useFactory: inicializador,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,6 +10,7 @@ export class ConfigService extends ConfigAPI {
   constructor(private httpRequest: HttpClient) { 
     super();
   }
+  
   loadConfigREST()
   {
 

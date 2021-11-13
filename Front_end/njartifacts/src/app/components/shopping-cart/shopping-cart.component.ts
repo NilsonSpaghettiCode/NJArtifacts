@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/interfaces/product';
+import { ConfigService } from 'src/app/services/config.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
 @Component({
@@ -15,11 +16,12 @@ export class ShoppingCartComponent implements OnInit {
   summary:number = 0;
   tax:number = 100;
 
-  constructor(private serviceCartProduct:ShoppingCartService) { }
+  constructor(private serviceCartProduct:ShoppingCartService, private configService:ConfigService) { }
 
   ngOnInit(): void {
     this.loadProducts();
     this.loadSummary();
+    console.log(this.configService.URL_API);
   }
 
   loadProducts(): void
