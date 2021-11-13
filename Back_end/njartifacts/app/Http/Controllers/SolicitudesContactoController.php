@@ -82,6 +82,14 @@ class SolicitudesContactoController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $solicitudes_contacto = SolicitudesContacto::find($id);
+        
+        $solicitudes_contacto->contactado = $request->contactado;
+
+        $solicitudes_contacto->save();
+        
+        return $solicitudes_contacto;
     }
 
     /**
@@ -89,9 +97,11 @@ class SolicitudesContactoController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function destroy($id)
     {
         //
+        return SolicitudesContacto::destroy($id);
+
     }
 }

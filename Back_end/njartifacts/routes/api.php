@@ -59,8 +59,8 @@ Route::delete('/categorias/{id}', 'App\Http\Controllers\CategoriaController@dele
 
 Route::get('/contactos' ,[SolicitudesContactoController::class,'index']);
 Route::post('/contactos' ,[SolicitudesContactoController::class,'store']);
-Route::put('/contactos/{id}' ,[SolicitudesContactoController::class,'index']);
-Route::delete('/contactos/{id}' ,[SolicitudesContactoController::class,'store']);
+Route::put('/contactos/{id}' ,[SolicitudesContactoController::class,'update']);
+Route::delete('/contactos/{id}' ,[SolicitudesContactoController::class,'destroy']);
 Route::get('/contactos/{id}' ,[SolicitudesContactoController::class,'index']);
 
 //Caracteristicas
