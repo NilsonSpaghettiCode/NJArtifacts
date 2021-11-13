@@ -61,14 +61,12 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id_producto)
     {
         //
-        ;
-        $producto_encontrado = Producto::findOrFail($request->id);
-        //echo $producto_encontrado->caracteristicas();
-        echo "HOLAAAAA";
-        return $producto_encontrado;
+        
+        $producto = Producto::find($id_producto);
+        return $producto;
     }
 
     /**

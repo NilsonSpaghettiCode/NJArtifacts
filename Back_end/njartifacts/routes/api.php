@@ -37,7 +37,7 @@ Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
 
 Route::get('/productos/{id}',[ProductoController::class, 'show']); //Implementar el metodo get para solo un producto
 
-//Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
+Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
 Route::post('/productos', 'App\Http\Controllers\ProductoController@store');
 Route::put('/productos/{id}', 'App\Http\Controllers\ProductoController@update');
 Route::delete('/productos/{id}', 'App\Http\Controllers\ProductoController@delete');
