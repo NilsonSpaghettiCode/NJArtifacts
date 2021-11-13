@@ -66,6 +66,7 @@ class ProductoController extends Controller
         //
         
         $producto = Producto::find($id_producto);
+        $producto->caracteristicas;
         return $producto;
     }
 

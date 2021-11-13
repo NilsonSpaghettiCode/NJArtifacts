@@ -10,5 +10,6 @@ class Caracteristica extends Model
     use HasFactory;
 
     protected $table = "caracteristica";
+    protected $primaryKey = "id_caracteristica";
 
 }
