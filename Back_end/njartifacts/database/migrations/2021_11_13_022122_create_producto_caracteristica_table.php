@@ -14,7 +14,15 @@ class CreateProductoCaracteristicaTable extends Migration
     public function up()
     {
         Schema::create('producto_caracteristica', function (Blueprint $table) {
+            
             $table->id();
+            
+            $table->unsignedBigInteger('id_productopk');
+            $table->unsignedBigInteger('id_caracteristicapk');
+            
+            $table->foreign('id_productopk')->references('id_producto')->on('producto');
+            $table->foreign('id_caracteristicapk')->references('id_caracteristica')->on('caracteristica');
+            
             $table->timestamps();
         });
     }
