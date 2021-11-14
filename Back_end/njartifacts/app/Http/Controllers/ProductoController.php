@@ -26,6 +26,7 @@ class ProductoController extends Controller
         {
             $producto->caracteristicas;
             $producto->categorias;
+            $producto->imagenes;
         }
         
         //$productos->where('id_producto',8)->get();
