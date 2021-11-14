@@ -14,16 +14,16 @@ class CreateOrdenTable extends Migration
     public function up()
     {
         Schema::create('orden', function (Blueprint $table) {
-            
+
             $table->id('id_orden');
-            
-            $table->unsignedBigInteger('id_userfk');
 
-            $table->foreign('id_userfk')->references('id_user')->on('users');
-
-            $table->string('email_usuario');
+            $table->string('nombre');
+            $table->string('correo_electronico');
+            $table->bigInteger('valor_total');
+            $table->integer('cantidad_productos');
+            $table->boolean('cancelado');
             $table->timestamp('fecha_orden');
-            
+
             $table->timestamps();
         });
     }

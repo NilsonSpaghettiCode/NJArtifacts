@@ -10,4 +10,5 @@ class Orden extends Model
     use HasFactory;
 
     protected $table = "orden";
+    protected $primaryKey = "id_orden";
 }
