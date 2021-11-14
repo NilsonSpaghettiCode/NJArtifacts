@@ -18,7 +18,6 @@ class ProductoController extends Controller
         //$productos->categorias;
         
          
-        
         foreach($productos as $producto)
         {
             $producto->caracteristicas;
@@ -52,13 +51,11 @@ class ProductoController extends Controller
         // $variable_registros->campo=$request->campo
         
         $productos = new Producto();
-        
-        $productos->valor=$request->valor;
+
         $productos->nombre=$request->nombre;
         $productos->descripcion=$request->descripcion;
-        $productos->images_list=$request->images_list;
-        $productos->categoria=$request->categoria;
         $productos->cantidad=$request->cantidad;
+        $productos->valor=$request->valor;
 
         //ano-mes-dia
         $productos->fecha_Insercion=$request->fecha_Insercion;
