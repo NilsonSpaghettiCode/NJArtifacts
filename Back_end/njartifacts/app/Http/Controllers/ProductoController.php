@@ -12,9 +12,22 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Producto $productos) //El request puede traer consultas
     {
         $productos = Producto::all();
+        //$productos->categorias;
+        
+         
+        
+        foreach($productos as $producto)
+        {
+            $producto->caracteristicas;
+            $producto->categorias;
+        }
+        
+        //$productos->where('id_producto',8)->get();
+        //$productos->all();
+        //echo gettype($productos);
         return $productos;
     }
 
@@ -67,6 +80,7 @@ class ProductoController extends Controller
         
         $producto = Producto::find($id_producto);
         $producto->caracteristicas;
+        $producto->categorias;
         return $producto;
     }
 
@@ -116,4 +130,5 @@ class ProductoController extends Controller
         
         return $productos;
     }
+
 }

@@ -4,22 +4,34 @@ import { ProductFilter } from 'src/app/interfaces/product-filter';
 import { Observable,} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
+import { ConfigService } from '../config.service';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  url_products = "http://localhost:3000/products?categoryId=";
+  recurso = 'productos';
   url_product = "http://localhost:3000/products/";
 
   url_product_new = "http://localhost:3000/products-new?_embed=products";
   url_product_featured = "http://localhost:3000/products-featured?_embed=products";
+
   res:any;
-  constructor(private httpclient: HttpClient) { }
+
+  constructor(private httpclient: HttpClient, private configService:ConfigService) { }
 
   getProducts(idCategory: number): Observable<Product[]> {
-    console.log("URL", this.url_products);
-    let list_products = this.httpclient.get<Product[]>(this.url_products + idCategory);
+    console.log("URL", (this.configService.URL_API + this.recurso));
+    let list_products;
+    
+    if(idCategory === 3)
+    {
+      list_products = this.httpclient.get<Product[]>((this.configService.URL_API + this.recurso));
+    }else
+    {
+      list_products = this.httpclient.get<Product[]>((this.configService.URL_API + this.recurso) + idCategory);
+    }
+    
     return list_products;
   }
 
@@ -46,7 +58,7 @@ export class ProductsService {
 
   getProductX()
   {
-    let response = this.httpclient.get(this.url_products, {responseType:"json"});
+    let response = this.httpclient.get(this.configService.URL_API, {responseType:"json"});
     this.res = response;
     //localStorage.setItem('a',stringify(response));
     

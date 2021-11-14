@@ -36,11 +36,18 @@ Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
 //Productos
 
 
+//Implementar el metodo get para solo un producto
+
+Route::resource('productos', 'App\Http\Controllers\ProductoController');
+/*
 Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
 Route::post('/productos', 'App\Http\Controllers\ProductoController@store');
 Route::put('/productos/{id}', 'App\Http\Controllers\ProductoController@update');
 Route::delete('/productos/{id}', 'App\Http\Controllers\ProductoController@delete');
-Route::get('/productos/{id}',[ProductoController::class, 'show']); //Implementar el metodo get para solo un producto
+Route::get('/productos/{id}',[ProductoController::class, 'show']);
+ 
+ */
+
 
 //Ordenes
 Route::get('/ordenes', 'App\Http\Controllers\OrdenController@index');

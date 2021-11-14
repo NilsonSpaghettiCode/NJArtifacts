@@ -1,4 +1,7 @@
 export interface Category {
-    id:number;
-    name_category:string;
+    id_categoria:number;
+    nombre:string;
+    descripcion:string;
+    create_at:string;
+    updated_at:string;
 }

@@ -15,8 +15,7 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadCategores();
-    console.table(this.list_category)
-
+    
   }
   loadCategores():void
   {

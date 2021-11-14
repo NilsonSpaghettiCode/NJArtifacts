@@ -3,21 +3,24 @@ import { Category } from 'src/app/interfaces/category';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ConfigService } from '../config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
   //Propiedades del servicio
-  url = 'http://localhost:8000/api/categorias';
+  recurso = 'categorias';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private serviceConfig:ConfigService) { }
 
   getCategories():Observable<Category[]>
   {
-    return this.http.get<Category[]>(this.url).pipe(catchError(this.handleError<Category[]>('getCategories', [])));
+    return this.http.get<Category[]>(this.serviceConfig.URL_API+this.recurso)
+    .pipe(catchError(this.handleError<Category[]>('getCategories', [])));
   }
 
+  //Cambiar
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
   
