@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Imagen;
 class ImagenController extends Controller
 {
     /**
@@ -11,9 +11,11 @@ class ImagenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Imagen $imagen)
     {
-        //
+        $imagenes = Imagen::all();
+        
+        return $imagenes;
     }
 
     /**
@@ -35,6 +37,12 @@ class ImagenController extends Controller
     public function store(Request $request)
     {
         //
+        $imagen = new Imagen();
+        $imagen->url_imagen = $request->url_imagen;
+        $imagen->id_productopk = $request->id_producto;
+        $imagen->save();
+
+        return $imagen;
     }
 
     /**

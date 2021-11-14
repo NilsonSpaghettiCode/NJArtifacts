@@ -11,6 +11,10 @@ use App\Http\Controllers\SolicitudesContactoController;
 
 use App\Http\Controllers\CaracteristicaController;
 
+use App\Http\Controllers\ImagenController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,7 +42,7 @@ Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
 
 //Implementar el metodo get para solo un producto
 
-Route::resource('productos', 'App\Http\Controllers\ProductoController');
+Route::resource('productos', ProductoController::class);
 /*
 Route::get('/productos', 'App\Http\Controllers\ProductoController@index');
 Route::post('/productos', 'App\Http\Controllers\ProductoController@store');
@@ -77,3 +81,6 @@ Route::post('/caracteristica', [CaracteristicaController::class, 'store']);
 Route::put('/caracteristica', [CaracteristicaController::class, 'update']);
 Route::delete('/caracteristica/{id}', [CaracteristicaController::class, 'destroy']);
 Route::get('/caracteristica/{id}', [CaracteristicaController::class, 'index']);
+
+//Imagenes
+Route::resource('imagenes', ImagenController::class);
