@@ -3,47 +3,34 @@
     <div class="col-sm-8">
       <div class="product-gallery">
         <div class="product-image">
-          <img class="col-sm-12 active" [src]="productToDetail.url_image">
+          <img class="col-sm-12 active" [src]="productToDetail.imagenes[0].url_imagen">
         </div>
         <ul class="image-list">
-          <li class="image-item"><img src="https://source.unsplash.com/W1yjvf5idqA" alt="algo"></li>
-          <li class="image-item"><img src="https://source.unsplash.com/VgbUxvW3gS4" alt="algo"></li>
-          <li class="image-item"><img src="https://source.unsplash.com/5WbYFH0kf_8" alt="algo"></li>
+          <li class="image-item"><img [src]="productToDetail.imagenes[0].url_imagen" alt="algo"></li>
+          <li class="image-item"><img [src]="productToDetail.imagenes[1].url_imagen" alt="algo"></li>
+          <li class="image-item"><img [src]="productToDetail.imagenes[2].url_imagen" alt="algo"></li>
         </ul>
       </div>
     </div>
     <div class="col-sm-4">
-      <h1>{{productToDetail.name_product}}</h1>
-      <h2>${{productToDetail.value}}</h2>
+      <h1>{{productToDetail.nombre}}</h1>
+      <h2>${{productToDetail.valor}}</h2>
       <div class="description">
-        <p>{{productToDetail.description}}</p>
+        <p>{{productToDetail.descripcion}}</p>
       </div>
 
-      <button (click)="addProduct()"class="col-sm-12 add-to-cart">Añadir al carrito</button>
+      <button (click)="addProduct()" class="col-sm-12 add-to-cart">Añadir al carrito</button>
 
     </div>
   </div>
-  <section class="row chara">
-    <h2>Caracteristicas</h2>
-    <div class="col-sm-8 accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-            aria-expanded="true" aria-controls="collapseOne">
-            Accordion Item #1
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin
-            adds the appropriate classes that we use to style each element. These classes control the overall
-            appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
-            CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-            <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
+  <hr>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      Caracteristicas
     </div>
-  </section>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let caracteristica of productToDetail.caracteristicas"><b>{{caracteristica.nombre}}:</b> {{caracteristica.descripcion}} </li>
+    </ul>
+  </div>
 </div>

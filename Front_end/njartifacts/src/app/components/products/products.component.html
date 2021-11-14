@@ -4,20 +4,20 @@
 
     <div class="row row-cols-4">
         <div class="col" *ngFor="let product of lista_productos">
-            <div *ngIf="product.url_image; then thenBlock else elseBlock">
+            <div *ngIf="product.imagenes; then thenBlock else elseBlock">
                 
             </div>
             <ng-template #thenBlock>
                 <div>
-                    <app-card [id_product]="product.id" [name_product]="product.name_product"
-                    [description]="product.description" [quantity]="product.quantity" [value_product]="product.value"
-                    [image_src]="product.url_image" [product]="product"></app-card> 
+                    <app-card [id_product]="product.id_producto" [name_product]="product.nombre"
+                    [description]="product.descripcion" [quantity]="product.cantidad" [value_product]="product.valor"
+                    [image_src]="product.imagenes[0].url_imagen" [product]="product"></app-card> 
                 </div>
             </ng-template>
             <ng-template #elseBlock>
                 <div >
-                    <app-card [id_product]="product.id" [name_product]="product.name_product"
-                    [description]="product.description" [quantity]="product.quantity" [value_product]="product.value"
+                    <app-card [id_product]="product.id_producto" [name_product]="product.nombre"
+                    [description]="product.descripcion" [quantity]="product.cantidad" [value_product]="product.valor"
                     [product]="product"></app-card>
                 </div>
             </ng-template>

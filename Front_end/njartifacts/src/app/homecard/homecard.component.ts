@@ -10,30 +10,20 @@ import { ProductsService } from '../services/services_catalog/products.service';
 })
 export class HomecardComponent implements OnInit {
 
-  products_new: ProductFilter = {};
+ 
 
-  products_featured: ProductFilter = {};
+  constructor(private serviceProducts: ProductsService) {
 
-  constructor(private serviceProducts: ProductsService) { }
+   }
 
   ngOnInit(): void {
-    this.loadProductsFeatured();
-    this.loadProductsNew();
-    //console.log(this.products_new)
-    //console.table(this.products_new.productId);
-    console.log("XXXXXXXXX");
-    this.serviceProducts.getProductX().subscribe(res => {
-      console.log("Respuesta", res);
-    });
 
   }
 
-  loadProductsNew(): void {
-    this.serviceProducts.getProductNew().subscribe(products => this.products_new = products);
-  }
+  cargarProductos():void
+  {
 
-  loadProductsFeatured(): void {
-    this.serviceProducts.getProductFeatured().subscribe(products => this.products_featured = products);
 
   }
+
 }

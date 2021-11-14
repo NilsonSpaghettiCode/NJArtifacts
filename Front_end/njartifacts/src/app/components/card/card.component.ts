@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
   @Input() quantity:number = 10;
   @Input() value_product:number =  12.5;
   @Input() id_product:number = 0;
-  @Input() product?:Product = <Product>{id:1,name_product:"",description:"",list_features:[],quantity:0,value:0,url_image:""};
+  @Input() product?:Product = <Product>{id_producto:1,nombre:"",descripcion:"",cantidad:0,create_at:"",updated_at:"",valor:0};
   //productX:Product = product;
   constructor(private cartService:ShoppingCartService) {
     

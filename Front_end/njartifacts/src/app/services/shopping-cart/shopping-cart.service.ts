@@ -30,7 +30,7 @@ export class ShoppingCartService {
   {
     let suma:number = 0;
     this.product_cart.forEach(product_select =>{
-      suma = suma + product_select.value;
+      suma = suma + product_select.valor;
     })
     
     return suma;

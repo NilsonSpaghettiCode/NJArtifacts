@@ -10,8 +10,8 @@ export interface Product {
     create_at:string;
     updated_at:string;
 
-    caracteristicas: Caracteristica[];
-    categorias: Category[];
+    caracteristicas?: Caracteristica[];
+    categorias?: Category[];
     imagenes:Imagen[];
 
 }

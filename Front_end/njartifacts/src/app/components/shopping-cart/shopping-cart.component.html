@@ -57,18 +57,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="hvr-grow col d-flex justify-content-center align-items-center"><img
-                                            [src]="product.url_image" width="120"></div>
+                                            [src]="product.imagenes[0].url_imagen" width="120"></div>
                                     <div class="col d-flex justify-content-center">
                                         <h5 class="d-flex justify-content-center align-items-center align-content-center align-self-center"
-                                            style="text-align: center;"><strong>{{product.name_product}}</strong><br></h5>
+                                            style="text-align: center;"><strong>{{product.nombre}}</strong><br></h5>
                                     </div>
                                     <div class="col d-flex justify-content-center align-items-center"
                                         style="height: 156px;">
-                                        <h5><strong>${{product.value}}</strong></h5>
+                                        <h5><strong>${{product.valor}}</strong></h5>
                                     </div>
                                     <div class="col d-flex justify-content-center align-items-center align-content-center"
                                         style="width: 268px;">
-                                        <h5><strong>{{product.quantity}}</strong></h5>
+                                        <h5><strong>{{product.cantidad}}</strong></h5>
                                     </div>
                                     <div class="col d-flex justify-content-center align-items-center"><button
                                             class="hvr-grow btn btn-dark border rounded-pill border-dark" type="button"
@@ -134,7 +134,7 @@
                         <div class="col">
                             <ul style="list-style: none;">
                                 <li *ngFor="let product of list_products_cart"><h5 style="text-align: center;">
-                                    <strong>${{product.value}}</strong></h5
+                                    <strong>${{product.valor}}</strong></h5
                                     
                                     ></li>
 
