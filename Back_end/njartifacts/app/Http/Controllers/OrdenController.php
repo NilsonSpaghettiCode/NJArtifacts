@@ -15,6 +15,11 @@ class OrdenController extends Controller
     public function index()
     {
         $ordenes = Orden::all();
+
+        foreach ($ordenes as $orden) {
+            $orden->productos;
+        }
+
         return $ordenes;
     }
 
@@ -36,13 +41,34 @@ class OrdenController extends Controller
      */
     public function store(Request $request)
     {
-        $ordenes = new Orden();
-        $ordenes->id_userfk=$request->id_userfk;
-        $ordenes->email_usuario=$request->email_usuario;
-        $ordenes->fecha_orden=$request->fecha_orden;
-
-        $ordenes->save();
+        $orden = new Orden();
         
+        $orden->nombre = $request->nombre;
+        $orden->correo_electronico = $request->correo_electronico;
+        $orden->valor_total = 0;
+        $orden->cantidad_productos = sizeof($request->productos);
+        $orden->cancelado = 0;
+        $orden->fecha_orden=now();
+
+        $orden->save();
+        $orden->productos()->attach($request->productos);
+        
+        
+        $suma = 0;
+        
+        $productos = $orden->productos;
+        foreach ($productos as $producto) 
+        {
+            $suma = $suma + $producto->valor;
+        }
+
+        $orden->valor_total = $suma;
+        
+        $orden->productos;
+
+        $orden->save();
+        
+        return $orden;
     }
 
     /**
