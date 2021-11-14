@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+//Imports para usar los factory de los modelos definidos
+use App\Models\Categoria;
+use App\Models\SolicitudesContacto;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,5 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        Categoria::factory(8)->create();
+        SolicitudesContacto::factory(10)->create();
     }
 }
