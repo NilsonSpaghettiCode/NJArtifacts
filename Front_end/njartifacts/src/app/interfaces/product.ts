@@ -1,12 +1,17 @@
+import { Caracteristica } from "./caracteristicas";
+import { Imagen } from "./imagen";
+import { Category } from "./category";
 export interface Product {
-    id: number;
-    name_product: string;
-    description: string;
-    categoryId: number;
-    //Agregar marca
-    
-    quantity:number;
-    list_features: [];
-    url_image: string;
-    value: number;
+    id_producto: number;
+    nombre: string;
+    descripcion: string;
+    valor: number;
+    cantidad:number;
+    create_at:string;
+    updated_at:string;
+
+    caracteristicas: Caracteristica[];
+    categorias: Category[];
+    imagenes:Imagen[];
+
 }
