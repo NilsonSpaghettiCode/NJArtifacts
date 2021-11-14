@@ -19,13 +19,10 @@ class CreateProductoTable extends Migration
             $table->id('id_producto');
             
             $table->string('nombre');
-            $table->text('descripcion');
+            $table->longText('descripcion');
             $table->Integer('valor');
             $table->integer('cantidad');
 
-            $table->string('images_list');//Cambiar implementacion
-            
-            
             //$table->timestamps('fecha_insercion', 4); 
 
             $table->timestamps();//created_at //updated_at

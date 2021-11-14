@@ -18,7 +18,7 @@ class CreateSolicitudesContactosTable extends Migration
             $table->string('nombre',100);
             $table->string('apellido',100);
             $table->string('correo_electronico',100);
-            $table->string('mensaje', 255);
+            $table->longText('mensaje');
             $table->boolean('contactado');
             $table->timestamps();
         });

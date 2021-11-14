@@ -26,7 +26,7 @@ class SolicitudesContactoFactory extends Factory
             'nombre' => $this->faker->name(),
             'apellido' => $this->faker->lastName(),
             'correo_electronico' => $this->faker->unique()->safeEmail(),
-            'mensaje' => $this->faker->paragraph(4),
+            'mensaje' => $this->faker->paragraph(3),
             'contactado' => 0,
         ];
     }
