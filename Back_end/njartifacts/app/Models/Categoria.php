@@ -13,4 +13,9 @@ class Categoria extends Model
     protected $table = "categoria";
     protected $primaryKey = "id_categoria";
 
+    function getPrimaryKey()
+    {
+        return $this->primaryKey;
+    }
+
 }

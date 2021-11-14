@@ -14,10 +14,14 @@ class ProductoController extends Controller
      */
     public function index(Request $request, Producto $productos) //El request puede traer consultas
     {
-        $productos = Producto::all();
+        //$productos = Producto::whereRelation('categorias', 'id_categoria', $request->id_categoria)->get();
         //$productos->categorias;
+        if (isset($request->id_categoria)) {
+            $productos = Producto::whereRelation('categorias', 'id_categoria', $request->id_categoria)->get();
+        }else{
+            $productos = Producto::all();
+        }
         
-         
         foreach($productos as $producto)
         {
             $producto->caracteristicas;
@@ -50,19 +54,26 @@ class ProductoController extends Controller
     {
         // $variable_registros->campo=$request->campo
         
-        $productos = new Producto();
+        $producto = new Producto();
 
-        $productos->nombre=$request->nombre;
-        $productos->descripcion=$request->descripcion;
-        $productos->cantidad=$request->cantidad;
-        $productos->valor=$request->valor;
+        $producto->nombre=$request->nombre;
+        $producto->descripcion=$request->descripcion;
+        $producto->cantidad=$request->cantidad;
+        $producto->valor=$request->valor;
 
         //ano-mes-dia
-        $productos->fecha_Insercion=$request->fecha_Insercion;
+        //$productos->fecha_Insercion=$request->fecha_Insercion;
 
 
-        $productos->save();
-        return $productos;
+        $producto->save();
+
+        /**
+         * Implementar despues de conocer forma de acceso
+         */
+        //$producto->categorias()->attach([1,2,3]); 
+       //$producto->caracteristicas()->attach([1,2,4]);
+
+        return $producto;
     }
 
     /**
