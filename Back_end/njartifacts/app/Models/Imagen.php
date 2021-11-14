@@ -10,4 +10,5 @@ class Imagen extends Model
     use HasFactory;
 
     protected $table = "imagens";
+    protected $primaryKey = "id_imagen";
 }
