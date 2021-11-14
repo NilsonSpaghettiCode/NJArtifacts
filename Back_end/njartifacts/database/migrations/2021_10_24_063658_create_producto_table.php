@@ -18,7 +18,7 @@ class CreateProductoTable extends Migration
 
             $table->id('id_producto');
             
-            $table->string('nombre');
+            $table->longText('nombre');
             $table->longText('descripcion');
             $table->Integer('valor');
             $table->integer('cantidad');
