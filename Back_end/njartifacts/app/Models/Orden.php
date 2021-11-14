@@ -11,4 +11,9 @@ class Orden extends Model
 
     protected $table = "orden";
     protected $primaryKey = "id_orden";
+
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class, 'orden_producto','id_ordenfk','id_productofk');
+    }
 }
