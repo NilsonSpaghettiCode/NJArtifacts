@@ -23,6 +23,8 @@ class CaracteristicaFactory extends Factory
     {
         return [
             //
+            'nombre' => $this->faker->randomElement(['Capacidad','Tamaño','Cantidad','Color']),
+            'descripcion' => $this->faker->randomElement(['30GB','Rojo','Verde','Azul','Negro','8'])
         ];
     }
 }
