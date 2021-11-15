@@ -26,9 +26,15 @@ export class ProductsService {
     return list_products;
   }
   getProductsQuary(id_categoria:number): Observable<Product[]> {
+
     console.log("URL", (this.configService.URL_API + this.recurso));
+    let params = {
+      "id_categoria":id_categoria
+    }
+
+
     let list_products;
-    list_products = this.httpclient.get<Product[]>((this.configService.URL_API + this.recurso));
+    list_products = this.httpclient.get<Product[]>((this.configService.URL_API + this.recurso), {params});
     return list_products;
   }
 
