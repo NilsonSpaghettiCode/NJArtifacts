@@ -11,26 +11,22 @@ export class ProductsComponent implements OnInit {
 
   @Input() categoryIdFilter = 0;
 
-  lista_productos:Product[] = []
-  
-  name_list:string = "Productos";
-  
-  constructor(private productService: ProductsService) { 
-    
+  lista_productos: Product[] = []
+
+  name_list: string = "Productos";
+
+  constructor(private productService: ProductsService) {
+
   }
 
   ngOnInit(): void {
     this.loadProducts();
   }
 
-  loadProducts():void
-  {
-    console.log(this.categoryIdFilter);
-    
-    this.productService.getProducts(this.categoryIdFilter).subscribe(products => this.lista_productos = products);
+  loadProducts(): void {
 
-
-
+    this.productService.getProducts().subscribe(products => this.lista_productos = products);
+  
   }
 
 }

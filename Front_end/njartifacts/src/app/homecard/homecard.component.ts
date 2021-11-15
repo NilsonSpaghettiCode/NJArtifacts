@@ -10,20 +10,20 @@ import { ProductsService } from '../services/services_catalog/products.service';
 })
 export class HomecardComponent implements OnInit {
 
- 
+  lista_productos:Product[] = []
 
   constructor(private serviceProducts: ProductsService) {
 
    }
 
   ngOnInit(): void {
+    this.cargarProductos();
 
   }
 
   cargarProductos():void
   {
-
-
+    this.serviceProducts.getProducts().subscribe(productos => this.lista_productos = productos);
   }
 
 }
