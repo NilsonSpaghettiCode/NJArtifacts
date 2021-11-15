@@ -12,7 +12,7 @@
       <form>
         <input type="text" name="user" placeholder="Username">
         <input type="password" name="pass" placeholder="Password">
-        <input type="submit" name="login" class="login login-submit" value="login">
+        <input type="submit" name="login" class="login login-submit" value="Login">
       </form>
     </div>
     
@@ -34,7 +34,7 @@
   padding: 40px;
   width: 274px;
   background-color: #F7F7F7;
-  margin: 0 auto 10px;
+  margin: 15% auto 10px;
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -92,7 +92,7 @@
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1); 
-  background-color: #4d90fe;
+  background-color: #fa1313;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
@@ -100,7 +100,7 @@
   /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #357ae8;
+  background-color: #b91b1b;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
