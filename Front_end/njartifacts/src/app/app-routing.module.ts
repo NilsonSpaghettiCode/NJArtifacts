@@ -10,7 +10,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-
+import { FormOrdenComponent } from './components/form-orden/form-orden.component';
 
 //En la constante rroutes se definen las rutas 
 //Contiene objetos de tipo Routes -> {atributos}
@@ -24,6 +24,8 @@ const routes: Routes = [
   {path:'test', component: CardComponent},
   {path: 'catalog/:categoryId', component: CatalogComponent}, //Esta ruta necesita de un parametro como filtro
   {path:'product-detail/:productId',component:ProductDetailComponent},
+  {path:'orden',component:FormOrdenComponent},
+
   { path: '**', component: PageNotFoundComponent }
 ];
 

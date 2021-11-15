@@ -21,6 +21,7 @@ import { ImagePreviewComponent } from './components/image-preview/image-preview.
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfigService } from './services/config.service';
 import { ConfigAPI } from './interfaces/config-rest';
+import { FormOrdenComponent } from './components/form-orden/form-orden.component';
 
 export function inicializador(configAPI:ConfigService)
 {
@@ -47,6 +48,7 @@ export function inicializador(configAPI:ConfigService)
     ShoppingCartComponent,
     ImagePreviewComponent,
     HomecardComponent,
+    FormOrdenComponent,
   ],
   imports: [
     BrowserModule,
