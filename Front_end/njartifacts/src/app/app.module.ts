@@ -12,7 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { HomecardComponent } from './components/homecard/homecard.component';
 
