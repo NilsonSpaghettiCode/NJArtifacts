@@ -1,10 +1,7 @@
 <div class="carrousel">
 
-
     <div class="container text-center">
         <form class="cot">
-
-
             <h1>Contact Us!</h1>
             <p>Say Hello! Or whatever you want!</p>
             <div id="logo" class="icon-ic-drafts-24px"></div>
@@ -19,28 +16,29 @@
 
             <textarea name="text" placeholder="Mensaje" [formControl]="form_mensaje"></textarea>
             <br>
-            <input (click)="sendContacto()" class="btn btn-success text-center" placeholder="Enviar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <input (click)="sendContacto()" class="btn btn-success text-center" placeholder="Enviar"
+                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            El registro {{response}} fue realizado
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Seguir</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        El registro {{response}} fue realizado
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Seguir</button>
-                    </div>
-                  </div>
                 </div>
-              </div>
+            </div>
 
         </form>
     </div>
-
     <section class="contac_info">
         <div id="content">
 
@@ -93,3 +91,4 @@
             </div>
         </div>
     </section>
+</div>

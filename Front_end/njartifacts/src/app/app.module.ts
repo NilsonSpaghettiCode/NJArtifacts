@@ -13,10 +13,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ProductsComponent } from './components/products/products.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { FeatureComponent } from './feature/feature.component';
-import { NewComponent } from './new/new.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { HomecardComponent } from './homecard/homecard.component';
+import { HomecardComponent } from './components/homecard/homecard.component';
 
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ImagePreviewComponent } from './components/image-preview/image-preview.component';
@@ -46,8 +44,6 @@ export function inicializador(configAPI:ConfigService)
     ProductsComponent,
     CatalogComponent,
     CarouselComponent,
-    FeatureComponent,
-    NewComponent,
     ShoppingCartComponent,
     ImagePreviewComponent,
     HomecardComponent,

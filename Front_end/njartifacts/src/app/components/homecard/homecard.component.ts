@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../interfaces/product';
-import { ProductFilter } from '../interfaces/product-filter';
-import { ProductsService } from '../services/services_catalog/products.service';
+import { Product } from '../../interfaces/product';
+import { ProductFilter } from '../../interfaces/product-filter';
+import { ProductsService } from '../../services/services_catalog/products.service';
 
 @Component({
   selector: 'app-homecard',
