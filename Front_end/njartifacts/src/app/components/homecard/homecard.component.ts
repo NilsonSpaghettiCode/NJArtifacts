@@ -25,5 +25,4 @@ export class HomecardComponent implements OnInit {
   {
     this.serviceProducts.getProducts().subscribe(productos => this.lista_productos = productos);
   }
-
 }
