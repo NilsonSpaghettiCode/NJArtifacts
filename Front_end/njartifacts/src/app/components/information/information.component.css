@@ -262,3 +262,13 @@
       .section:hover .overlay {
         background-color: rgba(0, 0, 0, 0.95);
       }
+
+      @media only screen and (max-width: 1466px) {
+        .container_card {
+          justify-content: center;
+          bottom: -40px;
+          flex-direction: column;
+          align-content: center;
+          align-items: center;
+        }
+      }
