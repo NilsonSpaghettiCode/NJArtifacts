@@ -81,7 +81,6 @@ body.login {
   color: red;
 }
 
-/* header */
 header[role="banner"] {
   background: white;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
@@ -109,7 +108,6 @@ header[role="banner"] .utilities li a {
   display: block;
 }
 
-/* header */
 .utilities a:before {
   padding-right: 0.6em;
 }
@@ -118,7 +116,6 @@ header[role="banner"] .utilities li a {
 nav[role="navigation"] {
   background: #2a3542;
   color: #ddd;
-  /* icons */
 }
 nav[role="navigation"] li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -147,7 +144,6 @@ nav[role="navigation"] .comments a:before {
 nav[role="navigation"] .users a:before {
 }
 
-/* current nav item */
 .current, .dashboard .dashboard a,
 .write .write a,
 .edit .edit a,
@@ -164,7 +160,6 @@ footer[role="contentinfo"] {
   padding: 0.2em;
 }
 
-/* panels */
 .panel {
   background-color: white;
   color: darkslategray;
@@ -178,7 +173,6 @@ footer[role="contentinfo"] {
   margin: 1rem;
 }
 
-/* typography */
 a {
   text-decoration: none;
   color: inherit;
@@ -203,7 +197,6 @@ b {
   color: lightslategray;
 }
 
-/* lists */
 ul,
 li {
   list-style-type: none;
@@ -228,7 +221,6 @@ main li:before {
   border-bottom: solid 5px transparent;
 }
 
-/* forms */
 form input,
 form textarea,
 form select {
@@ -289,7 +281,6 @@ form input[type="submit"]:hover {
   border-radius: 0.5em;
 }
 
-/* feedback */
 .error {
   background-color: #ffe9e0;
   border-color: #ffc4ad;
@@ -348,7 +339,6 @@ label.error {
   border-left-color: #6ce7db;
 }
 
-/* tables */
 table {
   border-collapse: collapse;
   width: 96%;
