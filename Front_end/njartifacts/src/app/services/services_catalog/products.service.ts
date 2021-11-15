@@ -10,12 +10,7 @@ import { ConfigService } from '../config.service';
 export class ProductsService {
 
   recurso = 'productos';
-  url_product = "http://localhost:3000/products/";
 
-  url_product_new = "http://localhost:3000/products-new?_embed=products";
-  url_product_featured = "http://localhost:3000/products-featured?_embed=products";
-
-  res: any;
 
   constructor(private httpclient: HttpClient, private configService: ConfigService) { }
 
@@ -42,29 +37,6 @@ export class ProductsService {
     let list_products = this.httpclient.get<Product>(this.configService.URL_API + this.recurso + '/' + idProduct);
     console.log(list_products);
     return list_products;
-  }
-
-  getProductNew(): Observable<ProductFilter> {
-    let list_products_new = this.httpclient.get<ProductFilter>(this.url_product_new);
-    //console.log("Tabla #1");
-    //console.table(list_products_new);
-    return list_products_new;
-  }
-
-
-  getProductFeatured(): Observable<ProductFilter> {
-    let list_products_featured = this.httpclient.get<ProductFilter>(this.url_product_featured);
-    //console.log("Tabla #2");
-    //console.table(list_products_featured);
-    return list_products_featured;
-  }
-
-  getProductX() {
-    let response = this.httpclient.get(this.configService.URL_API, { responseType: "json" });
-    this.res = response;
-    //localStorage.setItem('a',stringify(response));
-
-    return response;
   }
 
 
