@@ -1,14 +1,17 @@
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem; height: 36rem; margin: 5px;">
   <img [src]="image_src" class="card-img-top" alt="Component.png">
-  <div class="card-body">
+  <div class="card-body" style="width: auto; height: auto;">
     <h5 class="card-title">{{name_product}}</h5>
     <p class="card-text">{{description}}</p>
     <p class="card-text"><b>Value: </b>{{value_product}}$</p>
-    <a [routerLink]="['/product-detail',id_product]" class="btn btn-outline-success" style="margin-right: 1px;">Ver más</a>
-    <button (click)="addProduct()" class="btn btn-outline-warning" >Añadir al carrito</button>
+    <a [routerLink]="['/product-detail',id_product]" class="btn btn-outline-success" style="margin-right: 1px;">Ver
+      más</a>
+    <button (click)="addProduct()" class="btn btn-outline-warning">Añadir al carrito</button>
+
   </div>
-  
+
   <div class="card-footer">
     <b>Stock: </b>{{quantity}}
   </div>
+
 </div>

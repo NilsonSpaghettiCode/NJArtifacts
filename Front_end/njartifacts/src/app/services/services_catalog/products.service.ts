@@ -3,7 +3,6 @@ import { Product } from 'src/app/interfaces/product';
 import { ProductFilter } from 'src/app/interfaces/product-filter';
 import { Observable, } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { stringify } from '@angular/compiler/src/util';
 import { ConfigService } from '../config.service';
 @Injectable({
   providedIn: 'root'

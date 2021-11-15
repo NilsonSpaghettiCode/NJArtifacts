@@ -1,4 +1,6 @@
 <script src="../../assets/js/homecardjs.js"></script>
+
+
 <div class="container">
     <div class="col-md-12">
         <section class="projects-horizontal">
@@ -11,7 +13,7 @@
     </div>
     <div class="row">
         <div class="col hvr-grow" *ngFor="let producto of lista_productos">
-            <div class="card"><img class="card-img-top w-100 d-block" [src]="producto.imagenes[1].url_imagen">
+            <div class="card" style="width: 18rem; margin: 5px; height: 36rem;"><img class="card-img-top w-100 d-block" [src]="producto.imagenes[1].url_imagen">
                 <div class="card-body d-flex d-xxl-flex justify-content-center align-items-center align-content-center flex-wrap justify-content-xxl-center align-items-xxl-center">
                     <h4 class="card-title" style="text-align: center;">{{producto.nombre}}</h4>
                     <p class="card-text" style="text-align: justify;">{{producto.descripcion}}</p>
