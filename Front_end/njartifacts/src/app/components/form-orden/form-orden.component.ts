@@ -12,12 +12,14 @@ export class FormOrdenComponent implements OnInit {
 
   form_nombre = new FormControl('');
   form_email = new FormControl('');
+  status:boolean = false;
   
   lista_productos:number[] = [];
 
   constructor(private servicioProducto:ProductsService, private shopping_card:ShoppingCartService) { }
 
   ngOnInit(): void {
+    this.status = false;
     this.getID();
   }
 
@@ -26,9 +28,11 @@ export class FormOrdenComponent implements OnInit {
     let nombre = this.form_nombre.value;
     let email = this.form_email.value;
 
-    console.log("AYUDA")
     console.table(this.lista_productos);
     let response = this.servicioProducto.registrarOrden(nombre,email,this.lista_productos);
+    if (response === undefined) {
+      this.status = true;
+    }
   }
 
   getID()

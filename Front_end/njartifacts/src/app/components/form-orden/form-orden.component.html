@@ -2,7 +2,7 @@
     <div class="card" style="margin: 5px; width: 50rem;">
         <div class="card-body">
             <h5 class="card-title text-center">Registro de orden</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">Para comprar los productos en el carro porfavor registrelos como una orden.</p>
             <div class="form">
 
                 <form action="">
@@ -18,7 +18,26 @@
                     </div>
                     <div class="input-group mb-3">
                         <button (click)="registrarOrden()" class="btn btn-outline-success" type="button"
-                            id="button-addon1">Realizar orden</button>
+                            id="button-addon1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Realizar orden</button>
+                    </div>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    El registro de la orden fue {{status}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"
+                                        data-bs-dismiss="modal">Seguir</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </form>
