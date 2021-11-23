@@ -15,7 +15,34 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('solicitudes_contactos')" :active="request()->routeIs('solicitudes_contactos')">
+                        {{ __('Solicitudes de contacto') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('productos')" :active="request()->routeIs('productos')">
+                        {{ __('Inventario') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('categorias')" :active="request()->routeIs('categorias')">
+                        {{ __('Categorias de productos') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('ordenes')" :active="request()->routeIs('ordenes')">
+                        {{ __('Ordenes de productos') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Presentaciones') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('usuarios')" :active="request()->routeIs('usuarios')">
+                        {{ __('Usuarios') }}
+                    </x-nav-link>
+
                 </div>
+
+
             </div>
 
             <!-- Settings Dropdown -->

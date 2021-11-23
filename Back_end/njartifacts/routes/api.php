@@ -67,12 +67,14 @@ Route::put('/categorias/{id}', 'App\Http\Controllers\CategoriaController@update'
 Route::delete('/categorias/{id}', 'App\Http\Controllers\CategoriaController@delete');
 
 //Solicitudes Contanto
-
+/*
 Route::get('/contactos' ,[SolicitudesContactoController::class,'index']);
 Route::post('/contactos' ,[SolicitudesContactoController::class,'store']);
 Route::put('/contactos/{id}' ,[SolicitudesContactoController::class,'update']);
 Route::delete('/contactos/{id}' ,[SolicitudesContactoController::class,'destroy']);
 Route::get('/contactos/{id}' ,[SolicitudesContactoController::class,'index']);
+ */
+Route::resource('solicitudes_contactos',SolicitudesContactoController::class);
 
 //Caracteristicas
 

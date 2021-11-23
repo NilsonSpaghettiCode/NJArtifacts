@@ -14,6 +14,7 @@ class SolicitudesContactoController extends Controller
     public function index()
     {
         //
+        
         $solicitudes_contacto = SolicitudesContacto::all();
         return $solicitudes_contacto;
     }
@@ -26,6 +27,7 @@ class SolicitudesContactoController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -59,6 +61,13 @@ class SolicitudesContactoController extends Controller
     public function show($id)
     {
         //
+        
+    }
+
+    public function getContactos()
+    {
+        # code...
+        return view('solicitudes.index');
     }
 
     /**
