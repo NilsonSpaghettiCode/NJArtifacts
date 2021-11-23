@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 //Imports model
 
 use App\Models\Categoria;
+use App\Models\Imagen;
 use App\Models\Orden;
 use App\Models\Producto;
 use App\Models\SolicitudesContacto;
@@ -59,7 +60,7 @@ Route::get('ordenes', function () {
 
 Route::get('presentaciones', function () {
 
-    $ordenes = Orden::all();
+    $ordenes = Imagen::all();
     return view('presentaciones.index')->with('presentaciones', $ordenes);
 
 })->name('presentaciones')->middleware(['auth']);
