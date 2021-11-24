@@ -5,7 +5,12 @@
     </x-slot>
     <div class="container mx-auto transform translate-y-6 w-full">
 
-        {{session('response')}}
+        @empty(!session('response'))
+        <x-alert>
+            {{session('response')}}
+        </x-alert>
+        @endempty
+        
 
         <div class="bg-white p-4 border-solid rounded">
                 <table class="min-w-full leading-normal table-fixed">
@@ -29,7 +34,7 @@
 
                         <br>
                         <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Guardar</button>
-                        <a href="{{ url('/presentaciones') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Cancelar</a>
+                        <a href="{{ url('/categorias') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Cancelar</a>
 
                         </div>
 

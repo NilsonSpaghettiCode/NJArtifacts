@@ -28,6 +28,7 @@ class CaracteristicaController extends Controller
     public function create()
     {
         //
+        return view('caracteristicas.create');
     }
 
     /**
@@ -47,7 +48,7 @@ class CaracteristicaController extends Controller
 
         $caracteristica->save();
 
-        return $caracteristica;
+        return back()->with('response','Caracteristica creada');
     }
 
     /**
@@ -67,9 +68,11 @@ class CaracteristicaController extends Controller
      * @param  \App\Models\Caracteristica  $caracteristica
      * @return \Illuminate\Http\Response
      */
-    public function edit(Caracteristica $caracteristica)
+    public function edit($id)
     {
         //
+        $caracteristica = Caracteristica::find($id);
+        return view('caracteristicas.edit', compact('caracteristica'));
     }
 
     /**
@@ -79,14 +82,14 @@ class CaracteristicaController extends Controller
      * @param  \App\Models\Caracteristica  $caracteristica
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Caracteristica $caracteristica)
+    public function update(Request $request, $id)
     {
         //
-        $caracteristica = Caracteristica::find($request->id);
+        $caracteristica = Caracteristica::find($id);
         $caracteristica->nombre = $request->nombre;
         $caracteristica->descripcion = $request->descripcion;
         $caracteristica->save();
-        return $caracteristica;
+        return back()->with('response','Caracteristica actualizada con exito');
     }
 
     /**
@@ -98,7 +101,9 @@ class CaracteristicaController extends Controller
     public function destroy($id)
     {
         //
-        $caracteristica = Caracteristica::destroy($id);
-        return $caracteristica;
+        $caracteristica = Caracteristica::find($id);
+        $caracteristica->productos()->detach();
+        $caracteristica->delete();
+        return back()->with('response','Caracteristica eliminada con exito');
     }
 }

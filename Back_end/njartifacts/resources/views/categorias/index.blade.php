@@ -35,7 +35,7 @@
                         <form action="{{ route('categorias_i.destroy', $categoria->id_categoria) }}" method="post">
                             @method('DELETE')
                             @csrf
-                            <button type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
+                            <button type="submit" onclick="return confirm('Quiere borrar este registro?')" class="rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
                                 Eliminar
                             </button>
                         </form>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="mb-2 mr-2">
                         
-                            <a href="{{ route('categorias_i.edit', ['categorias_i'=>$categoria->id_categoria]) }}" type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-red-600 focus:outline-none">
+                            <a href="{{ route('categorias_i.edit', ['categorias_i'=>$categoria->id_categoria]) }}" type="submit" onclick="return confirm('Quiere editar este registro?')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-red-600 focus:outline-none">
                                 Editar
                             </a>
                         

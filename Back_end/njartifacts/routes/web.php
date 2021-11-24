@@ -132,6 +132,9 @@ Route::get('productos/create_creategorias', function () {
 
 Route::resource('presentacion_i', ImagenController::class)->middleware(['auth']);
 Route::resource('categorias_i', CategoriaController::class)->middleware(['auth']);
+Route::resource('caracteristica_i', CaracteristicaController::class)->middleware(['auth']);
+
+
 
 
 

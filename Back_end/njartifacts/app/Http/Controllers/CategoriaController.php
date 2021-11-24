@@ -16,6 +16,9 @@ class CategoriaController extends Controller
     {
         //Instancia
         $categorias = Categoria::all();
+        foreach ($categorias as $categoria) {
+            $categoria->productos;
+        }
         return $categorias;
     }
 
@@ -87,7 +90,7 @@ class CategoriaController extends Controller
 
         $categorias->save();
 
-        return $categorias;
+        return back()->with('response', 'Categoria actualizada con exito');
     }
 
     /**
@@ -98,7 +101,10 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        $categorias = Categoria::destroy($id);
+        
+        $categoria = Categoria::find($id);
+        $categoria->productos()->detach();
+        $categoria->delete();
         return back()->with('response', 'Categoria eliminada con exito');
     }
 }

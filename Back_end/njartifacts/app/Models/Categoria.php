@@ -18,4 +18,9 @@ class Categoria extends Model
         return $this->primaryKey;
     }
 
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class,'categoria_producto','id_productofk','id_categoriafk');
+    }
+
 }

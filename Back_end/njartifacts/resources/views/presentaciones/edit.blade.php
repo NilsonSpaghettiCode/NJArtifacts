@@ -4,7 +4,13 @@
         
     </x-slot>
     <div class="container mx-auto transform translate-y-6 w-full">
-        {{session('response')}}
+        @empty(!session('response'))
+        <x-alert>
+            {{session('response')}}
+        </x-alert>
+        @endempty
+        
+        
         <div class="bg-white p-4 border-solid rounded">
                 <table class="min-w-full leading-normal table-fixed">
                 <tr>

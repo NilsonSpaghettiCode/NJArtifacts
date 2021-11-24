@@ -7,7 +7,7 @@
 
         <div class="bg-white p-4 border-solid rounded">
             <div class="mr-2 mb-8 flex justify-end">
-                <a href="{{ url('caracteristicas/index') }}" class="rounded-md py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">
+                <a href="{{ route('caracteristica_i.create') }}" class="rounded-md py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">
                 Crear característica
                 </a>
             </div>
@@ -35,11 +35,18 @@
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <div class="mb-2 mr-2">
                 
-                        <button type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
+                        <button type="submit" onclick="return confirm('Quiere borrar este registro')" class="m-1 rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
                             Eliminar
                         </button>
+                        
             
                     </div>
+                    <div class="mb-2 mr-2">
+                    <a href="{{ route('caracteristica_i.edit', ['caracteristica_i'=>$caracteristica->id_caracteristica]) }}" class="m-1 rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-red-600 focus:outline-none">
+                    Editar
+                    </a>
+                    </div>  
+
                 </td>
             </tr>
             @endforeach

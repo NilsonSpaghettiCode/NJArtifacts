@@ -5,14 +5,19 @@
     </x-slot>
     <div class="container mx-auto transform translate-y-6 w-full">
 
-        {{session('response')}}
+        @empty(!session('response'))
+        <x-alert>
+            {{session('response')}}
+        </x-alert>
+        @endempty
+        
 
         <div class="bg-white p-4 border-solid rounded">
                 <table class="min-w-full leading-normal table-fixed">
                 <tr>
                     <form action="{{ route('categorias_i.update', $categoria->id_categoria) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     @csrf
-                    @method('update')
+                    @method('PUT')
                     <div class="flex flex-wrap -mx-4 mb-2">    
                                              
                         <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
