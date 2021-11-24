@@ -34,6 +34,12 @@ Route::get('solicitudes_contactos', function () {
     return view('solicitudes.index')->with('solicitudes_contacto', $solicitudesContacto);
 })->name('solicitudes_contactos')->middleware(['auth']);
 
+Route::get('productos/create', function () {
+    
+    return view('inventario.create');
+    
+})->name('productos/create')->middleware(['auth']);
+
 Route::get('productos', function () {
     $productos = Producto::all();
     return view('inventario.index')->with('productos', $productos);

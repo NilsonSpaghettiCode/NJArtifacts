@@ -27,7 +27,7 @@ export class InformationComponent implements OnInit {
     let apellido = this.form_apellido.value;
     let correo = this.form_correo.value;
     let mensaje = this.form_mensaje.value;
-    this.response = this.serviceInformation.sentInformationContact(nombre,apellido,correo,mensaje);
+    this.response = this.serviceInformation.sentInformationContact(nombre,apellido,mensaje,correo);
   }
 
 }

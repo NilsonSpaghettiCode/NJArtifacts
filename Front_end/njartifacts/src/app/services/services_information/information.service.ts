@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class InformationService {
 
   constructor(private httpRequest:HttpClient) { }
-  url_post_contact = "http://localhost:8000/api/contactos";
+  url_post_contact = "http://localhost:8000/api/solicitudes_contactos";
 
   sentInformationContact(nombre:string,apellido:string,mensaje:string, correo:string):any
   {

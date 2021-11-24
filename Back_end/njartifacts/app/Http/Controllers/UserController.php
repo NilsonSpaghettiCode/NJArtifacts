@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = Users::all();
+        $usuarios = User::all();
         return $usuarios;
     }
 
@@ -39,7 +39,7 @@ class UserController extends Controller
     {
         // --> Formato caremonda
         // $variable_registros
-        $usuarios = new Users();
+        $usuarios = new User();
         $usuarios->name = $request->name;  
         $usuarios->email = $request->email;
         $usuarios->password = $request->password;
@@ -79,7 +79,7 @@ class UserController extends Controller
     public function update(Request $request)
     {
 
-        $usuarios = Users::findOrFail($request->id);
+        $usuarios = User::findOrFail($request->id);
         $usuarios->name = $request->name;  
         $usuarios->email = $request->email;
         $usuarios->password = $request->password;
@@ -97,7 +97,7 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
-        $usuarios = Users::destroy($request->id);
+        $usuarios = User::destroy($request->id);
         return $usuarios;
     }
 }
