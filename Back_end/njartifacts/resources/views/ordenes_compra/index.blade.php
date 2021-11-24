@@ -17,9 +17,6 @@
                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">CREADO EL</th>
                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">ACTUALIZADO EL</th>
                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">OPCIONES</th>
-
-
-
             </tr>
 
             @foreach ($ordenes as $orden)
@@ -35,19 +32,33 @@
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$orden->updated_at}}</td>
                 <td class="flex px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <div class="mb-2 mr-2">   
-                        <button type="submit" onclick="return confirm('Quiere editar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">
-                            Editar
-                        </button>
-                  </div>
-                    <div class="mb-2 mr-2">   
-                            <button type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
-                                Eliminar
+                        <form action="{{ url('api/ordenes', $orden->id_orden) }}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" onclick="return confirm('Quiere editar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">
+                                Editar
                             </button>
+                        </form>
+                        
+                    </div>
+                    <div class="mb-2 mr-2">   
+                            <form action="{{ url('api/ordenes', $orden->id_orden) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
+                                    Eliminar
+                                </button>
+                            </form>
                       </div>
                 </td>
             </tr>
             @endforeach
-
+            @empty($ordenes)
+                <div>
+                    <p>Vacio</p>
+                </div>
+            @endempty
 
             </table>
         </div>

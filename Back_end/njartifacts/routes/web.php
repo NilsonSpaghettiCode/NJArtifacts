@@ -14,23 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 //imports controller
 use App\Http\Controllers\ProductoController;
-
 use App\Http\Controllers\SolicitudesContactoController;
-
 use App\Http\Controllers\CaracteristicaController;
-
 use App\Http\Controllers\ImagenController;
 
-
-
 //Imports model
-
 use App\Models\Categoria;
 use App\Models\Imagen;
 use App\Models\Orden;
 use App\Models\Producto;
 use App\Models\SolicitudesContacto;
 use App\Models\User;
+use App\Models\Caracteristica;
+
 
 
 Route::get('/', function () {
@@ -49,18 +45,35 @@ Route::resource('solicitudes',SolicitudesContactoController::class);
 
 Route::get('productos/create', function () {
     
-    return view('inventario.create');
+    $categorias = Categoria::all();
+    $caracteristicas = Caracteristica::all();
+    return view('inventario.create')->with('categorias',$categorias)->with('caracteristicas', $caracteristicas);
+
     
 })->name('productos/create')->middleware(['auth']);
 
 Route::get('presentaciones/create', function () {
     
-    return view('presentaciones.create');
+    $productos = Producto::all();
+    return view('presentaciones.create')->with('productos', $productos);
     
 })->name('presentaciones/create')->middleware(['auth']);
 
+Route::get('usuarios/edit', function () {
+    
+    return view('usuarios.edit');
+    
+})->name('usuarios/edit')->middleware(['auth']);
+
 Route::get('productos', function () {
     $productos = Producto::all();
+    foreach($productos as $producto)
+        {
+            $producto->caracteristicas;
+            $producto->categorias;
+            $producto->imagenes;
+        }
+
     return view('inventario.index')->with('productos', $productos);
 })->name('productos')->middleware(['auth']);
 
@@ -75,6 +88,12 @@ Route::get('usuarios', function () {
     $usuarios = User::all();
     return view('usuarios.index')->with('usuarios', $usuarios);
 })->name('usuarios')->middleware(['auth']);
+
+Route::get('caracteristicas', function () {
+
+    $caracteristicas = Caracteristica::all();
+    return view('caracteristicas.index')->with('caracteristicas', $caracteristicas);
+})->name('caracteristicas')->middleware(['auth']);
 
 Route::get('ordenes', function () {
 

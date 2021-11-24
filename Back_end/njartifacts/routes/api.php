@@ -12,6 +12,9 @@ use App\Http\Controllers\SolicitudesContactoController;
 use App\Http\Controllers\CaracteristicaController;
 
 use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\OrdenController;
 
 
 
@@ -31,11 +34,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Usuarios
-
+/*
 Route::get('/usuarios', 'App\Http\Controllers\UserController@index');
 Route::post('/usuarios', 'App\Http\Controllers\UserController@store');
 Route::put('/usuarios/{id}', 'App\Http\Controllers\UserController@update');
 Route::delete('/usuarios/{id}', 'App\Http\Controllers\UserController@delete');
+ */
+Route::resource('usuarios', UserController::class);
 
 //Productos
 
@@ -54,11 +59,14 @@ Route::get('/productos/{id}',[ProductoController::class, 'show']);
 
 
 //Ordenes
+
+/*
 Route::get('/ordenes', 'App\Http\Controllers\OrdenController@index');
 Route::post('/ordenes', 'App\Http\Controllers\OrdenController@store');
 Route::put('/ordenes/{id}', 'App\Http\Controllers\OrdenController@update');
 Route::delete('/ordenes/{id}', 'App\Http\Controllers\OrdenController@delete');
-
+ */
+Route::resource('ordenes', OrdenController::class);
 
 //Categorias
 Route::get('/categorias', 'App\Http\Controllers\CategoriaController@index');
@@ -77,6 +85,8 @@ Route::get('/contactos/{id}' ,[SolicitudesContactoController::class,'index']);
 Route::resource('solicitudes_contactos',SolicitudesContactoController::class);
 
 //Caracteristicas
+
+Route::resource('caracteristicas', CaracteristicaController::class);
 
 Route::get('/caracteristica', [CaracteristicaController::class, 'index']);
 Route::post('/caracteristica', [CaracteristicaController::class, 'store']);

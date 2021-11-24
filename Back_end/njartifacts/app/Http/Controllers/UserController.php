@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Users;
+
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
@@ -67,6 +67,7 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        return view('usuarios.edit');
     }
 
     /**
@@ -95,9 +96,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $usuarios = User::destroy($request->id);
-        return $usuarios;
+        User::destroy($id);
+        return redirect('usuarios');
     }
 }

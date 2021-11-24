@@ -88,5 +88,7 @@ class ImagenController extends Controller
     public function destroy($id)
     {
         //
+        $imagen_deleteada = Imagen::destroy($id);
+        return redirect('presentaciones');
     }
 }

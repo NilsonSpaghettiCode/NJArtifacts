@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orden;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class OrdenController extends Controller
@@ -100,17 +101,26 @@ class OrdenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update($id)
     {
         
-        $ordenes = Orden::findOrFail($request->id);
-        $ordenes->id_userfk=$request->id_userfk;
-        $ordenes->email_usuario=$request->email_usuario;
-        $ordenes->fecha_orden=$request->fecha_orden;
-
+        $ordenes = Orden::findOrFail($id);
+        $this->changeProductos($ordenes->productos);
+        $ordenes->cancelado = 1;
         $ordenes->save();
 
-        return $ordenes;
+        return redirect('ordenes');
+
+    }
+
+    public function changeProductos($productos)
+    {
+        foreach ($productos as $producto) {
+            $producto = Producto::find($producto->id_producto);
+            $producto->cantidad = $producto->cantidad-1;
+            $producto->save();
+        }
+
     }
 
     /**
@@ -119,10 +129,13 @@ class OrdenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $ordenes = Orden::destroy($request->id);
-        return $ordenes;
+        $ordenes = Orden::find($id);
+        $ordenes->productos()->detach();
+        Orden::destroy($id);
+        
+        return redirect('ordenes');
         
     }
 }

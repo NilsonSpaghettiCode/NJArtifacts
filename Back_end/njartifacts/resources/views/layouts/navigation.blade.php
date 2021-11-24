@@ -28,6 +28,10 @@
                         {{ __('Categorias de productos') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('caracteristicas')" :active="request()->routeIs('caracteristicas')">
+                        {{ __('Características de productos') }}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('ordenes')" :active="request()->routeIs('ordenes')">
                         {{ __('Ordenes de productos') }}
                     </x-nav-link>
@@ -93,6 +97,10 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <x-nav-link :href="route('caracteristicas')" :active="request()->routeIs('caracteristicas')">
+                {{ __('Características de productos') }}
+            </x-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

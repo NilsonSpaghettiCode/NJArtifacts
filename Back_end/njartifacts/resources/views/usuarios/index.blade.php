@@ -31,16 +31,21 @@
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$user->remember_token}}</td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$user->created_at}}</td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$user->updated_at}}</td>
-                <td class="flex px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <div class="mb-2 mr-2">   
                         <button type="submit" onclick="return confirm('Quiere editar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">
                             Editar
-                        </button>
+                        </a>
                   </div>
                     <div class="mb-2 mr-2">   
-                            <button type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
-                                Eliminar
-                            </button>
+                            <form action="{{ url('api/usuarios', $user->id_user) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                               
+                                <button type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-red-500 hover:bg-red-600 focus:outline-none">
+                                    Eliminar
+                                </button>
+                            </form>
                       </div>
                 </td>
             </tr>
