@@ -52,12 +52,6 @@ Route::get('productos/create', function () {
     
 })->name('productos/create')->middleware(['auth']);
 
-Route::get('presentaciones/create', function () {
-    
-    $productos = Producto::all();
-    return view('presentaciones.create')->with('productos', $productos);
-    
-})->name('presentaciones/create')->middleware(['auth']);
 
 Route::get('usuarios/edit', function () {
     
@@ -108,6 +102,13 @@ Route::get('presentaciones', function () {
     return view('presentaciones.index')->with('presentaciones', $imagenes);
 
 })->name('presentaciones')->middleware(['auth']);
+
+Route::get('presentaciones/create', function () {
+    
+    $productos = Producto::all();
+    return view('presentaciones.create')->with('productos', $productos);
+    
+})->name('presentaciones/create')->middleware(['auth']);
 
 
 

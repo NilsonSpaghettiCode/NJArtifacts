@@ -42,7 +42,7 @@ class ImagenController extends Controller
         $imagen->id_productopk = $request->id_producto;
         $imagen->save();
 
-        return $imagen;
+        return redirect('presentaciones');
     }
 
     /**
