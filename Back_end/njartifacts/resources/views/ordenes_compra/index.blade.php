@@ -36,7 +36,7 @@
                             @csrf
                             @method('PUT')
                             <button type="submit" onclick="return confirm('Quiere editar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">
-                                Editar
+                                Facturar
                             </button>
                         </form>
                         

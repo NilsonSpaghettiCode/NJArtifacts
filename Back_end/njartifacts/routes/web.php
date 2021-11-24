@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\SolicitudesContactoController;
 use App\Http\Controllers\CaracteristicaController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ImagenController;
 
 //Imports model
@@ -87,6 +88,7 @@ Route::get('caracteristicas', function () {
 
     $caracteristicas = Caracteristica::all();
     return view('caracteristicas.index')->with('caracteristicas', $caracteristicas);
+
 })->name('caracteristicas')->middleware(['auth']);
 
 Route::get('ordenes', function () {
@@ -109,6 +111,27 @@ Route::get('presentaciones/create', function () {
     return view('presentaciones.create')->with('productos', $productos);
     
 })->name('presentaciones/create')->middleware(['auth']);
+
+Route::get('productos/create_caracteristicas', function () {
+    
+    $caracteristicas = Caracteristica::all();
+    $productos = Producto::all();
+    return view('inventario.create_caracteristicas')->with('caracteristicas', $caracteristicas)->with('productos', $productos);
+
+    
+})->name('productos/create')->middleware(['auth']);
+
+Route::get('productos/create_creategorias', function () {
+    
+    $categorias = Categoria::all();
+    $productos = Producto::all();
+    return view('inventario.create_categorias')->with('categorias',$categorias)->with('productos', $productos);
+
+    
+})->name('productos/creategorias')->middleware(['auth']);
+
+Route::resource('presentacion_i', ImagenController::class)->middleware(['auth']);
+Route::resource('categorias_i', CategoriaController::class)->middleware(['auth']);
 
 
 

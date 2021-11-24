@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\Categoria;
+
+use App\Models\Caracteristica;
 use Illuminate\Http\Request;
+
+use function GuzzleHttp\Promise\all;
 
 class ProductoController extends Controller
 {
@@ -65,9 +70,19 @@ class ProductoController extends Controller
 
         //ano-mes-dia
         //$productos->fecha_Insercion=$request->fecha_Insercion;
-
-
+        $categorias = Categoria::all();
+        $categoria_array = array();
+        foreach ($categorias as $categoria) {
+            # code...
+            if ($categoria->nombre == "Todo") {
+                array_push($categoria_array, $categoria->id_categoria);
+            }
+        }
+        
         $producto->save();
+
+        $producto->categorias()->attach($categoria_array);
+        $producto->caracteristicas()->attach(Caracteristica::all());
 
         /**
          * Implementar despues de conocer forma de acceso
@@ -75,7 +90,8 @@ class ProductoController extends Controller
         //$producto->categorias()->attach([1,2,3]); 
        //$producto->caracteristicas()->attach([1,2,4]);
 
-        return $producto;
+        
+        return redirect('productos');
     }
 
     /**
@@ -91,7 +107,7 @@ class ProductoController extends Controller
         $producto = Producto::find($id_producto);
         $producto->caracteristicas;
         $producto->categorias;
-	$producto->imagenes;
+	    $producto->imagenes;
         return $producto;
     }
 
@@ -137,8 +153,14 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        $productos = Producto::destroy($id);
-        
+        $producto = Producto::find($id);
+        $producto->caracteristicas()->detach();
+        $producto->categorias()->detach();
+        foreach ($producto->imagenes as $imagen) {
+            $imagen->delete();
+        }
+        $producto->delete();
+
         return redirect('productos');
     }
 

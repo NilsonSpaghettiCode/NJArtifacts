@@ -26,8 +26,8 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
-        //return view('');
+        
+        return view('categorias.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class CategoriaController extends Controller
 
         $categorias->save();
 
-        return $categorias;
+        return back()->with('response','Categoria creada');
 
     }
 
@@ -68,6 +68,8 @@ class CategoriaController extends Controller
     public function edit($id)
     {
         //
+        $categoria = Categoria::find($id);
+        return view('categorias.edit', compact('categoria'));
     }
 
     /**
@@ -77,9 +79,9 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $categorias = Categoria::findOrFail($request->id);
+        $categorias = Categoria::findOrFail($id);
         $categorias->nombre=$request->nombre;
         $categorias->descripcion=$request->descripcion;
 
@@ -94,9 +96,9 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $categorias = Categoria::destroy($request->id);
-        return $categorias;
+        $categorias = Categoria::destroy($id);
+        return back()->with('response', 'Categoria eliminada con exito');
     }
 }

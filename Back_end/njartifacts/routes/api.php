@@ -96,3 +96,5 @@ Route::get('/caracteristica/{id}', [CaracteristicaController::class, 'index']);
 
 //Imagenes
 Route::resource('imagenes', ImagenController::class);
+
+require __DIR__ . '/auth.php';

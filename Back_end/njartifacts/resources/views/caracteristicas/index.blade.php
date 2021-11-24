@@ -24,12 +24,14 @@
 
             
 
+
+            @foreach ($caracteristicas as $caracteristica)
             <tr class="sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">No</td>
-                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">mames</td>
-                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">tengo</td>
-                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">bigote</td>
-                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">xd</td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$caracteristica->id_caracteristica}}</td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$caracteristica->nombre}}</td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$caracteristica->descripcion}}</td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$caracteristica->created_at}}</td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$caracteristica->updated_at}}</td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <div class="mb-2 mr-2">
                 
@@ -40,6 +42,8 @@
                     </div>
                 </td>
             </tr>
+            @endforeach
+            
                 
             
 

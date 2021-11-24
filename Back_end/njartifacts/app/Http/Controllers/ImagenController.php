@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Imagen;
+use App\Models\Producto;
 class ImagenController extends Controller
 {
     /**
@@ -65,6 +66,11 @@ class ImagenController extends Controller
     public function edit($id)
     {
         //
+        $imagen = Imagen::find($id);
+        $producto = Producto::find($imagen->id_productopk);
+
+        return view('presentaciones.edit', compact('imagen','producto'));
+        
     }
 
     /**
@@ -77,6 +83,10 @@ class ImagenController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $presentacion = Imagen::find($id);
+        $presentacion->url_imagen = $request->url_imagen;
+        $presentacion->save();
+        return back()->with('response','Presentacion actualizada');
     }
 
     /**
