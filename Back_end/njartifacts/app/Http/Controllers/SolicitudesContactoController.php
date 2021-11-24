@@ -27,7 +27,6 @@ class SolicitudesContactoController extends Controller
     public function create()
     {
         //
-        
     }
 
     /**
@@ -64,12 +63,6 @@ class SolicitudesContactoController extends Controller
         
     }
 
-    public function getContactos()
-    {
-        # code...
-        return view('solicitudes.index');
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -88,17 +81,17 @@ class SolicitudesContactoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         //
 
         $solicitudes_contacto = SolicitudesContacto::find($id);
         
-        $solicitudes_contacto->contactado = $request->contactado;
+        $solicitudes_contacto->contactado = 1;
 
         $solicitudes_contacto->save();
         
-        return $solicitudes_contacto;
+        return redirect('solicitudes_contactos');
     }
 
     /**
@@ -110,7 +103,9 @@ class SolicitudesContactoController extends Controller
     public function destroy($id)
     {
         //
-        return SolicitudesContacto::destroy($id);
+        SolicitudesContacto::destroy($id);
+
+        return redirect('solicitudes_contactos');
 
     }
 }

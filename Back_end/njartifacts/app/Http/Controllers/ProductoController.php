@@ -43,6 +43,7 @@ class ProductoController extends Controller
     public function create()
     {
         //
+        return view('inventario.create');
     }
 
     /**
@@ -134,11 +135,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $productos = Producto::destroy($request->id);
+        $productos = Producto::destroy($id);
         
-        return $productos;
+        return redirect('productos');
     }
 
 }

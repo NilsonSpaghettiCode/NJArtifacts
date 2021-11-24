@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//imports controller
+use App\Http\Controllers\ProductoController;
+
+use App\Http\Controllers\SolicitudesContactoController;
+
+use App\Http\Controllers\CaracteristicaController;
+
+use App\Http\Controllers\ImagenController;
+
+
 
 //Imports model
 
@@ -34,11 +44,20 @@ Route::get('solicitudes_contactos', function () {
     return view('solicitudes.index')->with('solicitudes_contacto', $solicitudesContacto);
 })->name('solicitudes_contactos')->middleware(['auth']);
 
+
+Route::resource('solicitudes',SolicitudesContactoController::class);
+
 Route::get('productos/create', function () {
     
     return view('inventario.create');
     
 })->name('productos/create')->middleware(['auth']);
+
+Route::get('presentaciones/create', function () {
+    
+    return view('presentaciones.create');
+    
+})->name('presentaciones/create')->middleware(['auth']);
 
 Route::get('productos', function () {
     $productos = Producto::all();
@@ -66,8 +85,8 @@ Route::get('ordenes', function () {
 
 Route::get('presentaciones', function () {
 
-    $ordenes = Imagen::all();
-    return view('presentaciones.index')->with('presentaciones', $ordenes);
+    $imagenes = Imagen::all();
+    return view('presentaciones.index')->with('presentaciones', $imagenes);
 
 })->name('presentaciones')->middleware(['auth']);
 
