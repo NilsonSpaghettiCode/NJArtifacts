@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Models\ProductoCategorias; 
 
 class ProductoCategoriasController extends Controller
 {
@@ -14,8 +17,8 @@ class ProductoCategoriasController extends Controller
     public function index()
     {
         //
-        
-        
+        $productos_categorias = ProductoCategorias::all();
+        return view('producto_categoria.index', compact('productos_categorias'));
     }
 
     /**
@@ -26,6 +29,9 @@ class ProductoCategoriasController extends Controller
     public function create()
     {
         //
+        $productos = Producto::all();
+        $categorias = Categoria::all();
+        return view('producto_caracteristica.create',compact('productos', 'categorias'));
     }
 
     /**
@@ -82,5 +88,10 @@ class ProductoCategoriasController extends Controller
     public function destroy($id)
     {
         //
+        $producto_categoria = ProductoCategorias::find($id);
+
+        $producto_categoria->delete();
+
+        return back()->with('response', 'Se elimino un Producto x caracteristica correctamente');
     }
 }

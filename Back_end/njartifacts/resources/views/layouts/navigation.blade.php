@@ -28,6 +28,10 @@
                         {{ __('Productos x Caracteríscas') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('producto_categoria.index')" :active="request()->routeIs('producto_categoria.index')">
+                        {{ __('Productos x Categorias') }}
+                    </x-nav-link>
+
                     
 
                     <x-nav-link :href="route('categorias')" :active="request()->routeIs('categorias')">
