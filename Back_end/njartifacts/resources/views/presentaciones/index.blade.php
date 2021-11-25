@@ -27,7 +27,7 @@
                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$presentacion->id_productopk}}</td>
                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$presentacion->created_at}}</td>
                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$presentacion->updated_at}}</td>
-                 <td class="flex px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                 <td class="px-5 py-5 mb-60 border-b border-gray-200 bg-white text-sm">
                     <div class="mb-2 mr-2">   
                         <a  href="{{ route('presentacion_i.edit', ['presentacion_i'=>$presentacion->id_imagen]) }}" type="submit" onclick="return confirm('Quiere editar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">
                             Editar

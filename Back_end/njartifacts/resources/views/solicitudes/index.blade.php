@@ -29,7 +29,7 @@
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$solicitud->contactado}}</td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$solicitud->created_at}}</td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{$solicitud->updated_at}}</td>
-                    <td  class="flex px-5 py-5 border-b border-gray-200 bg-white text-sm" > 
+                    <td  class="flex px-5 py-20 border-b border-gray-200 bg-white text-sm" > 
                         <div class="mb-2 mr-2">
                             <form action="{{ url('api/solicitudes_contactos', $solicitud->id) }}" method="POST">
                                 @csrf
