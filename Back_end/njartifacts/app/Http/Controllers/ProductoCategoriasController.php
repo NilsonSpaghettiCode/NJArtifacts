@@ -31,7 +31,7 @@ class ProductoCategoriasController extends Controller
         //
         $productos = Producto::all();
         $categorias = Categoria::all();
-        return view('producto_caracteristica.create',compact('productos', 'categorias'));
+        return view('producto_categoria.create',compact('productos', 'categorias'));
     }
 
     /**
@@ -43,6 +43,12 @@ class ProductoCategoriasController extends Controller
     public function store(Request $request)
     {
         //
+        $producto_categoria = new ProductoCategorias();
+        $producto_categoria->id_productofk  = $request->id_producto;
+        $producto_categoria->id_categoriafk = $request->id_categoria;
+        $producto_categoria->save();
+        return back()->with('response','Producto x categoria creado');
+
     }
 
     /**
