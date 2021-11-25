@@ -53,6 +53,7 @@ class ProductoCategoriasController extends Controller
         $producto_categoria->id_productofk  = $request->id_producto;
         $producto_categoria->id_categoriafk = $request->id_categoria;
         $producto_categoria->save();
+        //echo $producto_categoria;
         return back()->with('response','Producto x categoria creado');
 
     }
@@ -102,8 +103,10 @@ class ProductoCategoriasController extends Controller
         
         $producto_categoria->id_productofk = $request->id_producto;
         $producto_categoria->id_categoriafk = $request->id_categoria;
-        $producto_categoria->save();
-
+       $producto_categoria->save();
+        //echo $producto_categoria;
+        //echo "NEW" . $request->id_categoria;
+        //echo $request;
         return back()->with('response', 'Se actualizo un Producto x categoria correctamente');
 
     }

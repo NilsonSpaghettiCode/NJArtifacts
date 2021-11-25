@@ -121,6 +121,7 @@ Route::resource('producto_caracteristicas', ProductoCaracteristicasController::c
 
 Route::resource('producto_categoria', ProductoCategoriasController::class)->middleware(['auth']);
 
+Route::resource('productos_i', ProductoController::class)->middleware(['auth']);
 
 
 

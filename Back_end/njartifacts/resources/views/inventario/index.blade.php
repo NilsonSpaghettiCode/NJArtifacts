@@ -39,7 +39,12 @@
                                 Eliminar
                             </button>
                         </form>
-                      </div>
+                    </div>
+                    <div class="mb-2 mr-2"> 
+                        <a href="{{ route('productos_i.edit', ['productos_i'=>$producto->id_producto]) }}" type="submit" onclick="return confirm('Quiere borrar este registro')" class="rounded-full py-2 px-4 text-gray-100 bg-green-500 hover:bg-red-600 focus:outline-none">
+                                Editar
+                        </a>
+                    </div>
                 </td>
             </tr>
             @endforeach

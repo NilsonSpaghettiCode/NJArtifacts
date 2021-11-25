@@ -119,6 +119,8 @@ class ProductoController extends Controller
     public function edit($id)
     {
         //
+        $producto = Producto::find($id);
+        return view('inventario.edit', compact('producto'));
     }
 
     /**
@@ -130,18 +132,14 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $productos = Producto::findOrFail($request->id);
-        $productos->valor=$request->valor;
+        $productos = Producto::findOrFail($id);
         $productos->nombre=$request->nombre;
         $productos->descripcion=$request->descripcion;
-        $productos->images_list=$request->images_list;
-        $productos->categoria=$request->categoria;
+        $productos->valor=$request->valor;
         $productos->cantidad=$request->cantidad;
-
-        $productos->fecha_Insercion=$request->fecha_Insercion;
         $productos->save();
 
-        return $productos;
+        return back()->with('response','Se actualizo correctamente el producto');
     }
 
     /**

@@ -15,7 +15,7 @@
         <div class="bg-white p-4 border-solid rounded">
                 <table class="min-w-full leading-normal table-fixed">
                 <tr>
-                    <form action="{{ route('producto_caracteristicas.store') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="{{ route('producto_categoria.store') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     @csrf
                     @method('POST')
                     <div class="flex flex-wrap -mx-4 mb-2">    
@@ -35,7 +35,7 @@
                             <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Categoria</label> 
                                 
-                                <select name="id_caracteristica" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                                <select name="id_categoria" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                                     @foreach ($categorias as $categoria)
                                     <option value="{{$categoria->id_categoria}}">{{$categoria->nombre}}</option>
                                     @endforeach
