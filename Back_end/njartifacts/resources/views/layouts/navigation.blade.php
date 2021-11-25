@@ -24,6 +24,12 @@
                         {{ __('Inventario') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('producto_caracteristicas.index')" :active="request()->routeIs('producto_caracteristicas.index')">
+                        {{ __('Productos x Caracteríscas') }}
+                    </x-nav-link>
+
+                    
+
                     <x-nav-link :href="route('categorias')" :active="request()->routeIs('categorias')">
                         {{ __('Categorias de productos') }}
                     </x-nav-link>

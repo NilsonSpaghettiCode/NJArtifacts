@@ -18,7 +18,8 @@ use App\Http\Controllers\SolicitudesContactoController;
 use App\Http\Controllers\CaracteristicaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ImagenController;
-
+use App\Http\Controllers\ProductoCaracteristicasController;
+use App\Http\Controllers\ProductoCategoriasController;
 //Imports model
 use App\Models\Categoria;
 use App\Models\Imagen;
@@ -134,7 +135,9 @@ Route::resource('presentacion_i', ImagenController::class)->middleware(['auth'])
 Route::resource('categorias_i', CategoriaController::class)->middleware(['auth']);
 Route::resource('caracteristica_i', CaracteristicaController::class)->middleware(['auth']);
 
+Route::resource('producto_caracteristicas', ProductoCaracteristicasController::class)->middleware(['auth']);
 
+Route::resource('producto_categoria', ProductoCategoriasController::class)->middleware(['auth']);
 
 
 
