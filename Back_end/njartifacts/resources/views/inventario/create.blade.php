@@ -53,19 +53,6 @@
                         
                     
                 </tr>
-                <tr>           
-                    <div class="flex flex-wrap -mx-5 mb-2">    
-                        <div class="w-full md:w-1/5 px-3 mb-6 md:mb-0">
-                        <a href="{{ url('productos/create_caracteristicas', []) }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Relacionar caracteristica</a>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                        </div>
-                        </div>
-                        <div>
-                            <a href="{{ url('productos/create_creategorias', []) }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Relacionar categorias</a>
-                        </div>
-                    </div>
-                </tr>
                 </table>
             
 

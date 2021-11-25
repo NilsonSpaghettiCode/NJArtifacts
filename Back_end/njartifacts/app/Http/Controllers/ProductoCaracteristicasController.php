@@ -64,7 +64,7 @@ class ProductoCaracteristicasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ProductoCaracteristicas  $productoCaracteristicas
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -84,21 +84,28 @@ class ProductoCaracteristicasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProductoCaracteristicas  $productoCaracteristicas
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductoCaracteristicas $productoCaracteristicas)
+    public function update(Request $request, $id)
     {
-        //
+        $ProductoCaracteristica = ProductoCaracteristicas::find($id);
+        
+        $ProductoCaracteristica->id_productopk = $request->id_producto;
+        $ProductoCaracteristica->id_caracteristicapk = $request->id_caracteristica;
+        
+        $ProductoCaracteristica->save();
+
+        return back()->with('response', 'Se actualizo un Producto x caracteristica correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ProductoCaracteristicas  $productoCaracteristicas
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductoCaracteristicas $productoCaracteristicas)
+    public function destroy($id)
     {
         //
     }
