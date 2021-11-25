@@ -82,7 +82,6 @@ class ProductoController extends Controller
         $producto->save();
 
         $producto->categorias()->attach($categoria_array);
-        $producto->caracteristicas()->attach(Caracteristica::all());
 
         /**
          * Implementar despues de conocer forma de acceso

@@ -15,16 +15,15 @@
         <div class="bg-white p-4 border-solid rounded">
                 <table class="min-w-full leading-normal table-fixed">
                 <tr>
-                    <form action="producto_caracteristicas.update" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="{{ route('producto_caracteristicas.update', ['producto_caracteristica'=>$producto_caracterisca_seleccionado->id]) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     @csrf
                     @method('PUT')
                     <div class="flex flex-wrap -mx-4 mb-2">    
-                         {{$producto_seleccionado}}      
-                        
+   
                         <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Productos</label> 
                             <select name="id_producto" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                                <option selected value="{{$producto_seleccionado->id_producto}}" class="bg-green-100 color-green">XD</option>
+                                <option selected value="{{$producto_seleccionado->id_producto}}" class="bg-green-100 color-green">{{$producto_seleccionado->nombre}}</option>
                                 @foreach ($productos as $producto)
                                     <option value="{{$producto->id_producto}}">{{$producto->nombre}}</option>
                                 @endforeach
@@ -36,7 +35,7 @@
                             <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">caracteristicas</label> 
                                 <select name="id_caracteristica" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                                    <option selected value="{{$caracteristica_seleccionada->id_caracteristica}}" class="bg-green-100 color-green">{{$caracteristica_seleccionada->nombre}}</option>
+                                    <option selected value="{{$caracteristica_seleccionada->id_caracteristica}}" class="bg-green-100 color-green">{{$caracteristica_seleccionada->descripcion}}</option>
                                     @foreach ($caracteristicas as $caracteristicas)
                                         <option value="{{$caracteristicas->id_caracteristica}}">{{$caracteristicas->descripcion}}</option>
                                     @endforeach

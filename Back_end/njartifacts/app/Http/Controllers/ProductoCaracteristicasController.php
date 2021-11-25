@@ -74,8 +74,14 @@ class ProductoCaracteristicasController extends Controller
 
         $productos = Producto::all();
         $caracteristicas = Caracteristica::all();
-        $caracteristica_seleccionada = Caracteristica::find($producto_caracterisca_seleccionado->id_productopk);
-        $producto_seleccionado = Producto::find($producto_caracterisca_seleccionado->id_caracteristicapk);
+        $caracteristica_seleccionada = Caracteristica::find($producto_caracterisca_seleccionado->id_caracteristicapk);
+        $producto_seleccionado = Producto::find($producto_caracterisca_seleccionado->id_productopk);
+        
+        //echo "ProductoXCaracteristica: ". $producto_caracterisca_seleccionado;
+        //echo '<br></br>';
+        //echo "Caracteristica del ProductoXCaracteristica" . $caracteristica_seleccionada;
+        //echo '<br></br>';
+        //echo "Producto del ProductoXCaracteristica" . $producto_seleccionado;
         
         return view('producto_caracteristicas.edit', compact('producto_caracterisca_seleccionado','caracteristica_seleccionada','producto_seleccionado','productos', 'caracteristicas'));
     }
