@@ -9,6 +9,7 @@
             {{session('response')}}
         </x-alert>
         @endempty
+
         <div class="bg-white p-4 border-solid rounded">
             <div class="mr-2 mb-8 flex justify-end">
                 <a href="{{ route('producto_categoria.create') }}" class="rounded-md py-2 px-4 text-gray-100 bg-green-500 hover:bg-green-600 focus:outline-none">

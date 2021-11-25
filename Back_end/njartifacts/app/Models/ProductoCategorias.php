@@ -10,4 +10,9 @@ class ProductoCategorias extends Model
     use HasFactory;
     protected $table = 'categoria_producto';
     protected $primaryKey = 'id_categoriaProducto';
+
+    public function Producto()
+    {
+        return $this->morphTo(Producto::class,'BIGINT','id_producto','id_categoriaProducto');
+    }
 }

@@ -19,6 +19,11 @@ class ProductoCategoriasController extends Controller
     {
         //
         $productos_categorias = ProductoCategorias::all();
+       /* 
+        foreach ($productos_categorias as $producto_categoria) {
+            $producto_categoria->producto;
+        }
+        */
         return view('producto_categoria.index', compact('productos_categorias'));
     }
 
