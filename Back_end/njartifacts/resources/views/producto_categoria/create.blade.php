@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">caracteristicas</label> 
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Categoria</label> 
                                 
                                 <select name="id_caracteristica" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                                     @foreach ($categorias as $categoria)
@@ -48,7 +48,7 @@
 
                         <br>
                         <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Guardar</button>
-                        <a href="{{ url('/producto_caracteristicas') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Cancelar</a>
+                        <a href="{{ url('/producto_categoria') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Cancelar</a>
 
                         </div>
 

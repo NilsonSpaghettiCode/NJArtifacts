@@ -15,7 +15,7 @@
         <div class="bg-white p-4 border-solid rounded">
                 <table class="min-w-full leading-normal table-fixed">
                 <tr>
-                    <form action="{{ route('producto_caracteristicas.update', ['producto_caracteristica'=>$producto_caracterisca_seleccionado->id]) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="{{ route('producto_categoria.update', ['producto_categorium'=>$producto_categoria_seleccionado->id_categoriaProducto]) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                     @csrf
                     @method('PUT')
                     <div class="flex flex-wrap -mx-4 mb-2">    
@@ -33,11 +33,11 @@
                                 </div>
                             </div>
                             <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">caracteristicas</label> 
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Categorias</label> 
                                 <select name="id_caracteristica" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                                    <option selected value="{{$caracteristica_seleccionada->id_caracteristica}}" class="bg-green-100 color-green">{{$caracteristica_seleccionada->descripcion}}</option>
-                                    @foreach ($caracteristicas as $caracteristicas)
-                                        <option value="{{$caracteristicas->id_caracteristica}}">{{$caracteristicas->descripcion}}</option>
+                                    <option selected value="{{$categoria_seleccionada->id_categoria}}" class="bg-green-100 color-green">{{$categoria_seleccionada->nombre}}</option>
+                                    @foreach ($categorias as $categoria)
+                                        <option value="{{$categoria->id_caracteristica}}">{{$categoria->nombre}}</option>
                                     @endforeach
                                     </select>
                                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -48,7 +48,7 @@
 
                         <br>
                         <button type="submit" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Guardar</button>
-                        <a href="{{ url('/producto_caracteristicas') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Cancelar</a>
+                        <a href="{{ url('/producto_categoria') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Cancelar</a>
 
                         </div>
 

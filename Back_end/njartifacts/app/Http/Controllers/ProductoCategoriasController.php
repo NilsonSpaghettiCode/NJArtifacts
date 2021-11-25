@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Caracteristica;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
@@ -71,6 +72,15 @@ class ProductoCategoriasController extends Controller
     public function edit($id)
     {
         //
+
+        $producto_categoria_seleccionado = ProductoCategorias::find($id);
+        $productos = Producto::all();
+        $categorias = Categoria::all();
+
+        $categoria_seleccionada = Categoria::find($producto_categoria_seleccionado->id_categoriafk);
+        $producto_seleccionado = Producto::find($producto_categoria_seleccionado->id_productofk);
+        
+        return view('producto_categoria.edit', compact('producto_categoria_seleccionado','categoria_seleccionada','producto_seleccionado','productos', 'categorias'));
     }
 
     /**
@@ -83,6 +93,14 @@ class ProductoCategoriasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $producto_categoria = ProductoCategorias::find($id);
+        
+        $producto_categoria->id_productofk = $request->id_producto;
+        $producto_categoria->id_categoriafk = $request->id_categoria;
+        $producto_categoria->save();
+
+        return back()->with('response', 'Se actualizo un Producto x categoria correctamente');
+
     }
 
     /**
