@@ -113,24 +113,6 @@ Route::get('presentaciones/create', function () {
     
 })->name('presentaciones/create')->middleware(['auth']);
 
-Route::get('productos/create_caracteristicas', function () {
-    
-    $caracteristicas = Caracteristica::all();
-    $productos = Producto::all();
-    return view('inventario.create_caracteristicas')->with('caracteristicas', $caracteristicas)->with('productos', $productos);
-
-    
-})->name('productos/create')->middleware(['auth']);
-
-Route::get('productos/create_creategorias', function () {
-    
-    $categorias = Categoria::all();
-    $productos = Producto::all();
-    return view('inventario.create_categorias')->with('categorias',$categorias)->with('productos', $productos);
-
-    
-})->name('productos/creategorias')->middleware(['auth']);
-
 Route::resource('presentacion_i', ImagenController::class)->middleware(['auth']);
 Route::resource('categorias_i', CategoriaController::class)->middleware(['auth']);
 Route::resource('caracteristica_i', CaracteristicaController::class)->middleware(['auth']);

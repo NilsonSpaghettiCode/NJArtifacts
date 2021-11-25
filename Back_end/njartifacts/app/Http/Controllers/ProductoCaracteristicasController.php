@@ -108,5 +108,9 @@ class ProductoCaracteristicasController extends Controller
     public function destroy($id)
     {
         //
+        $ProductoCaracteristica = ProductoCaracteristicas::find($id);
+        $ProductoCaracteristica->delete();
+
+        return back()->with('response', 'Se elimino un Producto x caracteristica correctamente');
     }
 }
